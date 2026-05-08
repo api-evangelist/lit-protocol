@@ -5,31 +5,35 @@ provider: Lit Protocol
 providerId: lit-protocol
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - Web3
-- MPC
-- Decentralized
 - Key Management
-- Cryptography
+- MPC
+- Programmable Keys
+- Lit Actions
 - Rate Limiting
-- Quotas
-- Throttling
-description: Placeholder rate-limit artifact for Lit Protocol. Replace with real limits once researched.
-notes: Initial scaffold — limits have not yet been reconciled.
+description: The Chipotle API enforces per-API-key rate limits and a credit-balance
+  gate. Read endpoints are unmetered.
+notes: Limits documented in the Chipotle OpenAPI spec response codes.
 sources:
-- https://www.litprotocol.com/
+- https://api.chipotle.litprotocol.com/core/v1/openapi.json
 responseCodes:
   throttled: 429
 limits:
 - name: Default
+  scope: api_key
+  metric: requests_per_second
+  limit: 10
+  notes: Default Chipotle API throughput.
+- name: Credit Balance Gate
   scope: account
-  metric: varies
-  limit: see provider documentation
-  notes: Pending reconciliation.
+  metric: credits
+  limit: depends on top-up
+  notes: Operations halt when balance reaches $0.
 policies:
 - name: Backoff Strategy
-  description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+  description: Exponential backoff on 429; refill credits to resume operations.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

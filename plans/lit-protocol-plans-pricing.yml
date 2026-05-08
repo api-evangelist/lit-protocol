@@ -5,37 +5,69 @@ provider: Lit Protocol
 providerId: lit-protocol
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - Web3
-- MPC
-- Decentralized
 - Key Management
-- Cryptography
+- MPC
+- Programmable Keys
+- Lit Actions
 - Plans
-description: Placeholder plans/pricing artifact for Lit Protocol. Replace with real published pricing once
-  the pipeline researches the provider's plans page.
-notes: Initial scaffold — plans/pricing have not yet been reconciled against the provider's documentation.
+description: Lit Protocol is metered as a credit-based usage system. Users add credit
+  balances ($5 minimum top-up) and consume credits when executing Lit Actions and
+  write operations. Read-only calls are free.
+notes: Verify against developer.litprotocol.com.
 sources:
-- https://www.litprotocol.com/
+- https://developer.litprotocol.com/
 plans:
-- id: lit-protocol-default
-  name: To Be Reconciled
-  type: enterprise
-  description: Initial scaffold; replace with provider plan tiers once pricing is reconciled.
+- id: lit-prepaid
+  name: Prepaid Credits
+  type: paid
+  description: Pay-as-you-go credit balance topped up via credit card with a $5 minimum.
+    Reads are free; signs / Lit Action executions / encryption writes consume credits.
   entries:
-  - label: API Access
-    name: api_access
+  - label: Minimum Top-up
+    name: min_topup
     type: flat
-    metric: varies
+    metric: credits
+    limit: 1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: 5
+    userMultiplied: false
+  - label: Per-Operation Credit Cost
+    name: operation_cost
+    type: metered
+    metric: operation
     limit: -1
     timeFrame: usage
     geo: global
     unit: 1
-    price: see https://www.litprotocol.com/
+    price: see usage table
     userMultiplied: false
   elements:
-  - name: Pending Reconciliation
+  - name: PKPs
+  - name: Lit Actions
+  - name: Threshold Encryption
+- id: lit-enterprise
+  name: Enterprise
+  type: enterprise
+  description: Custom enterprise contracts with volume credit pricing and SLAs.
+  entries:
+  - label: Custom
+    name: custom
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: Volume Discounts
+  - name: SLA
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

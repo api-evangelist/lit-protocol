@@ -5,20 +5,20 @@ provider: Lit Protocol
 providerId: lit-protocol
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - Web3
-- MPC
-- Decentralized
 - Key Management
-- Cryptography
+- MPC
+- Programmable Keys
+- Lit Actions
 - FinOps
-- Cost Management
 - FOCUS
-description: FOCUS-aligned FinOps placeholder for Lit Protocol. Pipeline will replace with real billing details.
-notes: Initial scaffold — billing model has not yet been reconciled.
+description: Lit Protocol bills as a prepaid credit balance. FinOps levers focus on
+  credit consumption per Lit Action and sign operation.
+notes: Add Funds via dashboard; usage history visible there.
 sources:
-- https://www.litprotocol.com/
+- https://developer.litprotocol.com/
 - https://focus.finops.org/focus-specification/v1-3/
 alignedWith:
   framework: FinOps Foundation Framework
@@ -26,16 +26,15 @@ alignedWith:
   dataSpec: FOCUS
   dataSpecVersion: '1.3'
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
-publisherName: Lit Protocol
+publisherName: Lit Protocol Inc.
 serviceCategory: Web3
 billingModel:
-  pricingCategory: To Be Reconciled
-  billingFrequency: Monthly
+  pricingCategory: Prepaid Credits
+  billingFrequency: On Top-up
   billingCurrency: USD
   chargeCategories:
-  - Usage
   - Purchase
-  - Adjustment
+  - Usage
 focusColumns:
   ServiceName: Lit Protocol
   ServiceCategory: Web3
@@ -45,22 +44,30 @@ focusColumns:
   BillingCurrency: USD
   ChargeCategory: Usage
 meters:
-- name: api_usage
-  description: Catch-all meter pending reconciliation.
-  unit: varies
+- name: credits_consumed
+  description: Credits consumed per operation.
+  unit: credit
+  aggregation: sum
+  dimensions:
+  - api_key
+  - operation
+- name: lit_action_executions
+  description: Lit Action executions.
+  unit: execution
   aggregation: sum
   dimensions:
   - account
-  - resource
+  - ipfs_id
 principles:
 - name: Visibility
-  description: Pull provider invoices or usage exports until a self-serve usage feed is documented.
+  description: Use the Lit dashboard usage view.
 - name: Allocation
-  description: Tag invoice line items to consuming business units in your FinOps store.
+  description: API key per app/environment.
 - name: Optimization
-  description: Levers depend on the provider's billing model; review at renewal once reconciled.
+  description: Cache decrypted material client-side; minimize PKP signs; prefer batched
+    Lit Actions.
 - name: Accountability
-  description: Assign a contract owner to review billing against negotiated terms.
+  description: Account owner monitors prepaid balance and refills.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
