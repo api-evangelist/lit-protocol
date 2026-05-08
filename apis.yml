@@ -1,0 +1,29 @@
+aid: lit-protocol
+url: https://raw.githubusercontent.com/api-evangelist/lit-protocol/refs/heads/main/apis.yml
+name: Lit Protocol
+x-type: company
+description: >-
+  Lit Protocol is a decentralized key management network. Provides programmable threshold-signed actions, encrypted user data, and conditional signing across blockchains and APIs.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Web3
+  - MPC
+  - Decentralized
+  - Key Management
+  - Cryptography
+created: '2026-05-08'
+modified: '2026-05-08'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://www.litprotocol.com/
+  - type: Plans
+    url: plans/lit-protocol-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/lit-protocol-rate-limits.yml
+  - type: FinOps
+    url: finops/lit-protocol-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
