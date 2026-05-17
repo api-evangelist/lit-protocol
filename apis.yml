@@ -1,7 +1,7 @@
 aid: lit-protocol
 url: https://raw.githubusercontent.com/api-evangelist/lit-protocol/refs/heads/main/apis.yml
 name: Lit Protocol
-x-type: company
+kind: company
 description: Lit Protocol is a decentralized key management network providing Programmable
   Key Pairs (PKPs), Lit Actions (off-chain JS execution), threshold encryption, and
   access-control conditions. The Chipotle Express API exposes account, PKP, and Lit
