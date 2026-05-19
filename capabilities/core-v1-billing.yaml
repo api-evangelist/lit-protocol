@@ -1,0 +1,213 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: lit-api-server — Billing
+  description: 'lit-api-server — Billing. 4 operations. Lead operation: Billing. Self-contained Naftiko capability covering
+    one Lit Protocol business surface.'
+  tags:
+  - Lit Protocol
+  - Billing
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LIT_PROTOCOL_API_KEY: LIT_PROTOCOL_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: core-v1-billing
+    baseUri: ''
+    description: lit-api-server — Billing business capability. Self-contained, no shared references.
+    resources:
+    - name: billing-balance
+      path: /billing/balance
+      operations:
+      - name: billingbalance
+        method: GET
+        description: GET /billing/balance — returns the current credit balance for the authenticated user.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'API-mode auth: account or usage API key (alternatively `Authorization: Bearer <key>`). OR — for ChainSecured
+            callers — omit X-Api-Key entirely and send `X-Walle'
+    - name: billing-confirm_payment
+      path: /billing/confirm_payment
+      operations:
+      - name: billingconfirmpayment
+        method: POST
+        description: POST /billing/confirm_payment — verifies a succeeded PaymentIntent and credits the account.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'API-mode auth: account or usage API key (alternatively `Authorization: Bearer <key>`). OR — for ChainSecured
+            callers — omit X-Api-Key entirely and send `X-Walle'
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: billing-create_payment_intent
+      path: /billing/create_payment_intent
+      operations:
+      - name: billingcreatepaymentintent
+        method: POST
+        description: POST /billing/create_payment_intent — creates a Stripe PaymentIntent and returns the client_secret for
+          use with Stripe.js `confirmCardPayment`.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'API-mode auth: account or usage API key (alternatively `Authorization: Bearer <key>`). OR — for ChainSecured
+            callers — omit X-Api-Key entirely and send `X-Walle'
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: billing-stripe_config
+      path: /billing/stripe_config
+      operations:
+      - name: billingstripeconfig
+        method: GET
+        description: GET /billing/stripe_config — returns the Stripe publishable key. No auth required; the publishable key
+          is safe to expose.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: core-v1-billing-rest
+    port: 8080
+    description: REST adapter for lit-api-server — Billing. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/billing/balance
+      name: billing-balance
+      description: REST surface for billing-balance.
+      operations:
+      - method: GET
+        name: billingbalance
+        description: GET /billing/balance — returns the current credit balance for the authenticated user.
+        call: core-v1-billing.billingbalance
+        with:
+          X-Api-Key: rest.X-Api-Key
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/billing/confirm-payment
+      name: billing-confirm-payment
+      description: REST surface for billing-confirm_payment.
+      operations:
+      - method: POST
+        name: billingconfirmpayment
+        description: POST /billing/confirm_payment — verifies a succeeded PaymentIntent and credits the account.
+        call: core-v1-billing.billingconfirmpayment
+        with:
+          X-Api-Key: rest.X-Api-Key
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/billing/create-payment-intent
+      name: billing-create-payment-intent
+      description: REST surface for billing-create_payment_intent.
+      operations:
+      - method: POST
+        name: billingcreatepaymentintent
+        description: POST /billing/create_payment_intent — creates a Stripe PaymentIntent and returns the client_secret for
+          use with Stripe.js `confirmCardPayment`.
+        call: core-v1-billing.billingcreatepaymentintent
+        with:
+          X-Api-Key: rest.X-Api-Key
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/billing/stripe-config
+      name: billing-stripe-config
+      description: REST surface for billing-stripe_config.
+      operations:
+      - method: GET
+        name: billingstripeconfig
+        description: GET /billing/stripe_config — returns the Stripe publishable key. No auth required; the publishable key
+          is safe to expose.
+        call: core-v1-billing.billingstripeconfig
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: core-v1-billing-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for lit-api-server — Billing. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: get-billing-balance-returns-current
+      description: GET /billing/balance — returns the current credit balance for the authenticated user.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: core-v1-billing.billingbalance
+      with:
+        X-Api-Key: tools.X-Api-Key
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-billing-confirm-payment-verifies
+      description: POST /billing/confirm_payment — verifies a succeeded PaymentIntent and credits the account.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: core-v1-billing.billingconfirmpayment
+      with:
+        X-Api-Key: tools.X-Api-Key
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-billing-create-payment-intent
+      description: POST /billing/create_payment_intent — creates a Stripe PaymentIntent and returns the client_secret for
+        use with Stripe.js `confirmCardPayment`.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: core-v1-billing.billingcreatepaymentintent
+      with:
+        X-Api-Key: tools.X-Api-Key
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-billing-stripe-config-returns
+      description: GET /billing/stripe_config — returns the Stripe publishable key. No auth required; the publishable key
+        is safe to expose.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: core-v1-billing.billingstripeconfig
+      outputParameters:
+      - type: object
+        mapping: $.

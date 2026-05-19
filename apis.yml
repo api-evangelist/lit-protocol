@@ -46,6 +46,8 @@ apis:
   - type: Documentation
     url: https://developer.litprotocol.com/v3/sdk/installation
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/lit-protocol
 - type: Website
   url: https://www.litprotocol.com/
 - type: Plans

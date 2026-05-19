@@ -1,0 +1,1367 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: lit-api-server — Account Management
+  description: 'lit-api-server — Account Management. 28 operations. Lead operation: Account Management. Self-contained Naftiko
+    capability covering one Lit Protocol business surface.'
+  tags:
+  - Lit Protocol
+  - Account Management
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LIT_PROTOCOL_API_KEY: LIT_PROTOCOL_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: core-v1-account-management
+    baseUri: ''
+    description: lit-api-server — Account Management business capability. Self-contained, no shared references.
+    resources:
+    - name: account_exists
+      path: /account_exists
+      operations:
+      - name: accountexists
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+          required: true
+    - name: add_action
+      path: /add_action
+      operations:
+      - name: addaction
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: add_action_to_group
+      path: /add_action_to_group
+      operations:
+      - name: addactiontogroup
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: add_group
+      path: /add_group
+      operations:
+      - name: addgroup
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: add_pkp_to_group
+      path: /add_pkp_to_group
+      operations:
+      - name: addpkptogroup
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: add_usage_api_key
+      path: /add_usage_api_key
+      operations:
+      - name: addusageapikey
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: add_usage_api_key_with_signature
+      path: /add_usage_api_key_with_signature
+      operations:
+      - name: addusageapikeywithsignature
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: convert_to_chain_secured_account
+      path: /convert_to_chain_secured_account
+      operations:
+      - name: converttochainsecuredaccount
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: create_wallet
+      path: /create_wallet
+      operations:
+      - name: createwallet
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+          required: true
+    - name: create_wallet_with_signature
+      path: /create_wallet_with_signature
+      operations:
+      - name: createwalletwithsignature
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: delete_action
+      path: /delete_action
+      operations:
+      - name: deleteaction
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: get_chain_config_keys
+      path: /get_chain_config_keys
+      operations:
+      - name: getchainconfigkeys
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: get_lit_action_ipfs_id
+      path: /get_lit_action_ipfs_id
+      operations:
+      - name: getlitactionipfsid
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: get_node_chain_config
+      path: /get_node_chain_config
+      operations:
+      - name: getnodechainconfig
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: list_actions
+      path: /list_actions
+      operations:
+      - name: listactions
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: group_id
+          in: query
+          type: string
+        - name: page_number
+          in: query
+          type: integer
+          required: true
+        - name: page_size
+          in: query
+          type: integer
+          required: true
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+          required: true
+    - name: list_api_keys
+      path: /list_api_keys
+      operations:
+      - name: listapikeys
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: page_number
+          in: query
+          type: integer
+          required: true
+        - name: page_size
+          in: query
+          type: integer
+          required: true
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+          required: true
+    - name: list_groups
+      path: /list_groups
+      operations:
+      - name: listgroups
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: page_number
+          in: query
+          type: integer
+          required: true
+        - name: page_size
+          in: query
+          type: integer
+          required: true
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+          required: true
+    - name: list_wallets
+      path: /list_wallets
+      operations:
+      - name: listwallets
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: page_number
+          in: query
+          type: integer
+          required: true
+        - name: page_size
+          in: query
+          type: integer
+          required: true
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+          required: true
+    - name: list_wallets_in_group
+      path: /list_wallets_in_group
+      operations:
+      - name: listwalletsingroup
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: group_id
+          in: query
+          type: integer
+          required: true
+        - name: page_number
+          in: query
+          type: integer
+          required: true
+        - name: page_size
+          in: query
+          type: integer
+          required: true
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+          required: true
+    - name: new_account
+      path: /new_account
+      operations:
+      - name: newaccount
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: remove_action_from_group
+      path: /remove_action_from_group
+      operations:
+      - name: removeactionfromgroup
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: remove_group
+      path: /remove_group
+      operations:
+      - name: removegroup
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: remove_pkp_from_group
+      path: /remove_pkp_from_group
+      operations:
+      - name: removepkpfromgroup
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: remove_usage_api_key
+      path: /remove_usage_api_key
+      operations:
+      - name: removeusageapikey
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: update_action_metadata
+      path: /update_action_metadata
+      operations:
+      - name: updateactionmetadata
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: update_group
+      path: /update_group
+      operations:
+      - name: updategroup
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: update_usage_api_key
+      path: /update_usage_api_key
+      operations:
+      - name: updateusageapikey
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: update_usage_api_key_metadata
+      path: /update_usage_api_key_metadata
+      operations:
+      - name: updateusageapikeymetadata
+        method: POST
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: X-Api-Key
+          in: header
+          type: string
+          description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: core-v1-account-management-rest
+    port: 8080
+    description: REST adapter for lit-api-server — Account Management. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/account-exists
+      name: account-exists
+      description: REST surface for account_exists.
+      operations:
+      - method: GET
+        name: accountexists
+        description: accountexists
+        call: core-v1-account-management.accountexists
+        with:
+          X-Api-Key: rest.X-Api-Key
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/add-action
+      name: add-action
+      description: REST surface for add_action.
+      operations:
+      - method: POST
+        name: addaction
+        description: addaction
+        call: core-v1-account-management.addaction
+        with:
+          X-Api-Key: rest.X-Api-Key
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/add-action-to-group
+      name: add-action-to-group
+      description: REST surface for add_action_to_group.
+      operations:
+      - method: POST
+        name: addactiontogroup
+        description: addactiontogroup
+        call: core-v1-account-management.addactiontogroup
+        with:
+          X-Api-Key: rest.X-Api-Key
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/add-group
+      name: add-group
+      description: REST surface for add_group.
+      operations:
+      - method: POST
+        name: addgroup
+        description: addgroup
+        call: core-v1-account-management.addgroup
+        with:
+          X-Api-Key: rest.X-Api-Key
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/add-pkp-to-group
+      name: add-pkp-to-group
+      description: REST surface for add_pkp_to_group.
+      operations:
+      - method: POST
+        name: addpkptogroup
+        description: addpkptogroup
+        call: core-v1-account-management.addpkptogroup
+        with:
+          X-Api-Key: rest.X-Api-Key
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/add-usage-api-key
+      name: add-usage-api-key
+      description: REST surface for add_usage_api_key.
+      operations:
+      - method: POST
+        name: addusageapikey
+        description: addusageapikey
+        call: core-v1-account-management.addusageapikey
+        with:
+          X-Api-Key: rest.X-Api-Key
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/add-usage-api-key-with-signature
+      name: add-usage-api-key-with-signature
+      description: REST surface for add_usage_api_key_with_signature.
+      operations:
+      - method: POST
+        name: addusageapikeywithsignature
+        description: addusageapikeywithsignature
+        call: core-v1-account-management.addusageapikeywithsignature
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/convert-to-chain-secured-account
+      name: convert-to-chain-secured-account
+      description: REST surface for convert_to_chain_secured_account.
+      operations:
+      - method: POST
+        name: converttochainsecuredaccount
+        description: converttochainsecuredaccount
+        call: core-v1-account-management.converttochainsecuredaccount
+        with:
+          X-Api-Key: rest.X-Api-Key
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/create-wallet
+      name: create-wallet
+      description: REST surface for create_wallet.
+      operations:
+      - method: GET
+        name: createwallet
+        description: createwallet
+        call: core-v1-account-management.createwallet
+        with:
+          X-Api-Key: rest.X-Api-Key
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/create-wallet-with-signature
+      name: create-wallet-with-signature
+      description: REST surface for create_wallet_with_signature.
+      operations:
+      - method: POST
+        name: createwalletwithsignature
+        description: createwalletwithsignature
+        call: core-v1-account-management.createwalletwithsignature
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/delete-action
+      name: delete-action
+      description: REST surface for delete_action.
+      operations:
+      - method: POST
+        name: deleteaction
+        description: deleteaction
+        call: core-v1-account-management.deleteaction
+        with:
+          X-Api-Key: rest.X-Api-Key
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-chain-config-keys
+      name: get-chain-config-keys
+      description: REST surface for get_chain_config_keys.
+      operations:
+      - method: GET
+        name: getchainconfigkeys
+        description: getchainconfigkeys
+        call: core-v1-account-management.getchainconfigkeys
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-lit-action-ipfs-id
+      name: get-lit-action-ipfs-id
+      description: REST surface for get_lit_action_ipfs_id.
+      operations:
+      - method: POST
+        name: getlitactionipfsid
+        description: getlitactionipfsid
+        call: core-v1-account-management.getlitactionipfsid
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/get-node-chain-config
+      name: get-node-chain-config
+      description: REST surface for get_node_chain_config.
+      operations:
+      - method: GET
+        name: getnodechainconfig
+        description: getnodechainconfig
+        call: core-v1-account-management.getnodechainconfig
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/list-actions
+      name: list-actions
+      description: REST surface for list_actions.
+      operations:
+      - method: GET
+        name: listactions
+        description: listactions
+        call: core-v1-account-management.listactions
+        with:
+          group_id: rest.group_id
+          page_number: rest.page_number
+          page_size: rest.page_size
+          X-Api-Key: rest.X-Api-Key
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/list-api-keys
+      name: list-api-keys
+      description: REST surface for list_api_keys.
+      operations:
+      - method: GET
+        name: listapikeys
+        description: listapikeys
+        call: core-v1-account-management.listapikeys
+        with:
+          page_number: rest.page_number
+          page_size: rest.page_size
+          X-Api-Key: rest.X-Api-Key
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/list-groups
+      name: list-groups
+      description: REST surface for list_groups.
+      operations:
+      - method: GET
+        name: listgroups
+        description: listgroups
+        call: core-v1-account-management.listgroups
+        with:
+          page_number: rest.page_number
+          page_size: rest.page_size
+          X-Api-Key: rest.X-Api-Key
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/list-wallets
+      name: list-wallets
+      description: REST surface for list_wallets.
+      operations:
+      - method: GET
+        name: listwallets
+        description: listwallets
+        call: core-v1-account-management.listwallets
+        with:
+          page_number: rest.page_number
+          page_size: rest.page_size
+          X-Api-Key: rest.X-Api-Key
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/list-wallets-in-group
+      name: list-wallets-in-group
+      description: REST surface for list_wallets_in_group.
+      operations:
+      - method: GET
+        name: listwalletsingroup
+        description: listwalletsingroup
+        call: core-v1-account-management.listwalletsingroup
+        with:
+          group_id: rest.group_id
+          page_number: rest.page_number
+          page_size: rest.page_size
+          X-Api-Key: rest.X-Api-Key
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/new-account
+      name: new-account
+      description: REST surface for new_account.
+      operations:
+      - method: POST
+        name: newaccount
+        description: newaccount
+        call: core-v1-account-management.newaccount
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/remove-action-from-group
+      name: remove-action-from-group
+      description: REST surface for remove_action_from_group.
+      operations:
+      - method: POST
+        name: removeactionfromgroup
+        description: removeactionfromgroup
+        call: core-v1-account-management.removeactionfromgroup
+        with:
+          X-Api-Key: rest.X-Api-Key
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/remove-group
+      name: remove-group
+      description: REST surface for remove_group.
+      operations:
+      - method: POST
+        name: removegroup
+        description: removegroup
+        call: core-v1-account-management.removegroup
+        with:
+          X-Api-Key: rest.X-Api-Key
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/remove-pkp-from-group
+      name: remove-pkp-from-group
+      description: REST surface for remove_pkp_from_group.
+      operations:
+      - method: POST
+        name: removepkpfromgroup
+        description: removepkpfromgroup
+        call: core-v1-account-management.removepkpfromgroup
+        with:
+          X-Api-Key: rest.X-Api-Key
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/remove-usage-api-key
+      name: remove-usage-api-key
+      description: REST surface for remove_usage_api_key.
+      operations:
+      - method: POST
+        name: removeusageapikey
+        description: removeusageapikey
+        call: core-v1-account-management.removeusageapikey
+        with:
+          X-Api-Key: rest.X-Api-Key
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/update-action-metadata
+      name: update-action-metadata
+      description: REST surface for update_action_metadata.
+      operations:
+      - method: POST
+        name: updateactionmetadata
+        description: updateactionmetadata
+        call: core-v1-account-management.updateactionmetadata
+        with:
+          X-Api-Key: rest.X-Api-Key
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/update-group
+      name: update-group
+      description: REST surface for update_group.
+      operations:
+      - method: POST
+        name: updategroup
+        description: updategroup
+        call: core-v1-account-management.updategroup
+        with:
+          X-Api-Key: rest.X-Api-Key
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/update-usage-api-key
+      name: update-usage-api-key
+      description: REST surface for update_usage_api_key.
+      operations:
+      - method: POST
+        name: updateusageapikey
+        description: updateusageapikey
+        call: core-v1-account-management.updateusageapikey
+        with:
+          X-Api-Key: rest.X-Api-Key
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/update-usage-api-key-metadata
+      name: update-usage-api-key-metadata
+      description: REST surface for update_usage_api_key_metadata.
+      operations:
+      - method: POST
+        name: updateusageapikeymetadata
+        description: updateusageapikeymetadata
+        call: core-v1-account-management.updateusageapikeymetadata
+        with:
+          X-Api-Key: rest.X-Api-Key
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: core-v1-account-management-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for lit-api-server — Account Management. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: accountexists
+      description: accountexists
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: core-v1-account-management.accountexists
+      with:
+        X-Api-Key: tools.X-Api-Key
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: addaction
+      description: addaction
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: core-v1-account-management.addaction
+      with:
+        X-Api-Key: tools.X-Api-Key
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: addactiontogroup
+      description: addactiontogroup
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: core-v1-account-management.addactiontogroup
+      with:
+        X-Api-Key: tools.X-Api-Key
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: addgroup
+      description: addgroup
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: core-v1-account-management.addgroup
+      with:
+        X-Api-Key: tools.X-Api-Key
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: addpkptogroup
+      description: addpkptogroup
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: core-v1-account-management.addpkptogroup
+      with:
+        X-Api-Key: tools.X-Api-Key
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: addusageapikey
+      description: addusageapikey
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: core-v1-account-management.addusageapikey
+      with:
+        X-Api-Key: tools.X-Api-Key
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: addusageapikeywithsignature
+      description: addusageapikeywithsignature
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: core-v1-account-management.addusageapikeywithsignature
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: converttochainsecuredaccount
+      description: converttochainsecuredaccount
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: core-v1-account-management.converttochainsecuredaccount
+      with:
+        X-Api-Key: tools.X-Api-Key
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createwallet
+      description: createwallet
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: core-v1-account-management.createwallet
+      with:
+        X-Api-Key: tools.X-Api-Key
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createwalletwithsignature
+      description: createwalletwithsignature
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: core-v1-account-management.createwalletwithsignature
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteaction
+      description: deleteaction
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: core-v1-account-management.deleteaction
+      with:
+        X-Api-Key: tools.X-Api-Key
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getchainconfigkeys
+      description: getchainconfigkeys
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: core-v1-account-management.getchainconfigkeys
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getlitactionipfsid
+      description: getlitactionipfsid
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: core-v1-account-management.getlitactionipfsid
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getnodechainconfig
+      description: getnodechainconfig
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: core-v1-account-management.getnodechainconfig
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listactions
+      description: listactions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: core-v1-account-management.listactions
+      with:
+        group_id: tools.group_id
+        page_number: tools.page_number
+        page_size: tools.page_size
+        X-Api-Key: tools.X-Api-Key
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listapikeys
+      description: listapikeys
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: core-v1-account-management.listapikeys
+      with:
+        page_number: tools.page_number
+        page_size: tools.page_size
+        X-Api-Key: tools.X-Api-Key
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listgroups
+      description: listgroups
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: core-v1-account-management.listgroups
+      with:
+        page_number: tools.page_number
+        page_size: tools.page_size
+        X-Api-Key: tools.X-Api-Key
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listwallets
+      description: listwallets
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: core-v1-account-management.listwallets
+      with:
+        page_number: tools.page_number
+        page_size: tools.page_size
+        X-Api-Key: tools.X-Api-Key
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listwalletsingroup
+      description: listwalletsingroup
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: core-v1-account-management.listwalletsingroup
+      with:
+        group_id: tools.group_id
+        page_number: tools.page_number
+        page_size: tools.page_size
+        X-Api-Key: tools.X-Api-Key
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: newaccount
+      description: newaccount
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: core-v1-account-management.newaccount
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: removeactionfromgroup
+      description: removeactionfromgroup
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: core-v1-account-management.removeactionfromgroup
+      with:
+        X-Api-Key: tools.X-Api-Key
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: removegroup
+      description: removegroup
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: core-v1-account-management.removegroup
+      with:
+        X-Api-Key: tools.X-Api-Key
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: removepkpfromgroup
+      description: removepkpfromgroup
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: core-v1-account-management.removepkpfromgroup
+      with:
+        X-Api-Key: tools.X-Api-Key
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: removeusageapikey
+      description: removeusageapikey
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: core-v1-account-management.removeusageapikey
+      with:
+        X-Api-Key: tools.X-Api-Key
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateactionmetadata
+      description: updateactionmetadata
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: core-v1-account-management.updateactionmetadata
+      with:
+        X-Api-Key: tools.X-Api-Key
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updategroup
+      description: updategroup
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: core-v1-account-management.updategroup
+      with:
+        X-Api-Key: tools.X-Api-Key
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateusageapikey
+      description: updateusageapikey
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: core-v1-account-management.updateusageapikey
+      with:
+        X-Api-Key: tools.X-Api-Key
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateusageapikeymetadata
+      description: updateusageapikeymetadata
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: core-v1-account-management.updateusageapikeymetadata
+      with:
+        X-Api-Key: tools.X-Api-Key
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
