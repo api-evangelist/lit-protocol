@@ -8,54 +8,56 @@ description: Lit Protocol is a decentralized key management network providing Pr
   Action management as REST endpoints alongside the JavaScript SDK.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-- Web3
-- Key Management
-- MPC
-- Programmable Keys
-- Lit Actions
+  - Web3
+  - Key Management
+  - MPC
+  - Programmable Keys
+  - Lit Actions
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
 apis:
-- aid: lit:chipotle-api
-  name: Lit Protocol Chipotle Express API (Core v1)
-  description: REST API for account management, API keys, PKP minting, IPFS-anchored
-    Lit Actions, encryption/decryption helpers, and credit balance / usage queries.
-  humanURL: https://developer.litprotocol.com/
-  baseURL: https://api.chipotle.litprotocol.com/core/v1
-  tags:
-  - REST
-  - PKP
-  - Lit Actions
-  properties:
-  - type: Documentation
-    url: https://developer.litprotocol.com/
-  - type: OpenAPI
-    url: openapi/lit-protocol-core-v1-openapi.json
-- aid: lit:network-rpc
-  name: Lit Network Node JSON-RPC (SDK-mediated)
-  description: Threshold-cryptography network of Lit nodes accessed via the Lit JS
-    SDK for signing, encryption, decryption, and Lit Action execution. Direct REST
-    access is via the Chipotle API; raw node JSON-RPC is documented for SDK contributors.
-  humanURL: https://developer.litprotocol.com/v3/sdk/installation
-  baseURL: https://serrano.litgateway.com/web/litaction (SDK-mediated)
-  tags:
-  - JSON-RPC
-  - Network
-  properties:
-  - type: Documentation
-    url: https://developer.litprotocol.com/v3/sdk/installation
+  - aid: lit:chipotle-api
+    name: Lit Protocol Chipotle Express API (Core v1)
+    description: REST API for account management, API keys, PKP minting, IPFS-anchored
+      Lit Actions, encryption/decryption helpers, and credit balance / usage queries.
+    humanURL: https://developer.litprotocol.com/
+    baseURL: https://api.chipotle.litprotocol.com/core/v1
+    tags:
+    - REST
+    - PKP
+    - Lit Actions
+    properties:
+    - type: Documentation
+      url: https://developer.litprotocol.com/
+    - type: OpenAPI
+      url: openapi/lit-protocol-core-v1-openapi.json
+  - aid: lit:network-rpc
+    name: Lit Network Node JSON-RPC (SDK-mediated)
+    description: Threshold-cryptography network of Lit nodes accessed via the Lit JS
+      SDK for signing, encryption, decryption, and Lit Action execution. Direct REST
+      access is via the Chipotle API; raw node JSON-RPC is documented for SDK contributors.
+    humanURL: https://developer.litprotocol.com/v3/sdk/installation
+    baseURL: https://serrano.litgateway.com/web/litaction (SDK-mediated)
+    tags:
+    - JSON-RPC
+    - Network
+    properties:
+    - type: Documentation
+      url: https://developer.litprotocol.com/v3/sdk/installation
 common:
+  - type: GitHubOrganization
+    url: https://github.com/LIT-Protocol
   - type: LinkedIn
     url: https://www.linkedin.com/company/lit-protocol
-- type: Website
-  url: https://www.litprotocol.com/
-- type: Plans
-  url: plans/lit-protocol-plans-pricing.yml
-- type: RateLimits
-  url: rate-limits/lit-protocol-rate-limits.yml
-- type: FinOps
-  url: finops/lit-protocol-finops.yml
+  - type: Website
+    url: https://www.litprotocol.com/
+  - type: Plans
+    url: plans/lit-protocol-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/lit-protocol-rate-limits.yml
+  - type: FinOps
+    url: finops/lit-protocol-finops.yml
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
