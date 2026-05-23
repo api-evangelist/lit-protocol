@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ApiKeyItem",
+  "title": "ApiKeyItem",
+  "description": "One item from list_api_keys (AccountConfig.sol UsageApiKey).",
+  "type": "object",
+  "required": [
+    "api_key_hash",
+    "balance",
+    "can_add_pkp_to_groups",
+    "can_create_groups",
+    "can_create_pkps",
+    "can_delete_groups",
+    "can_execute_in_groups",
+    "can_manage_ipfs_ids_in_groups",
+    "can_remove_pkp_from_groups",
+    "description",
+    "expiration",
+    "id",
+    "name"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "api_key_hash": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "expiration": {
+      "type": "string"
+    },
+    "balance": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "can_create_groups": {
+      "type": "boolean"
+    },
+    "can_delete_groups": {
+      "type": "boolean"
+    },
+    "can_create_pkps": {
+      "type": "boolean"
+    },
+    "can_manage_ipfs_ids_in_groups": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "uint64",
+        "minimum": 0.0
+      }
+    },
+    "can_add_pkp_to_groups": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "uint64",
+        "minimum": 0.0
+      }
+    },
+    "can_remove_pkp_from_groups": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "uint64",
+        "minimum": 0.0
+      }
+    },
+    "can_execute_in_groups": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "uint64",
+        "minimum": 0.0
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DeleteActionRequest",
+  "title": "DeleteActionRequest",
+  "description": "Request for delete_action. hashed_cid is already a keccak256 hash (hex string). API key via header.",
+  "type": "object",
+  "required": [
+    "hashed_cid"
+  ],
+  "properties": {
+    "hashed_cid": {
+      "description": "Already-hashed CID for the action (0x-prefixed hex string).",
+      "type": "string"
+    }
+  }
+}

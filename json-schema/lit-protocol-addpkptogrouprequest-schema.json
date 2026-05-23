@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AddPkpToGroupRequest",
+  "title": "AddPkpToGroupRequest",
+  "type": "object",
+  "required": [
+    "group_id",
+    "pkp_id"
+  ],
+  "properties": {
+    "group_id": {
+      "description": "Group ID (decimal or hex string).",
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "pkp_id": {
+      "type": "string"
+    }
+  }
+}

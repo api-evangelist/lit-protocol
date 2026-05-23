@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RemoveActionFromGroupRequest",
+  "title": "RemoveActionFromGroupRequest",
+  "description": "Request for remove_action_from_group. hashed_cid is already a keccak256 hash (hex string). API key via header.",
+  "type": "object",
+  "required": [
+    "group_id",
+    "hashed_cid"
+  ],
+  "properties": {
+    "group_id": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "hashed_cid": {
+      "description": "Already-hashed CID for the action (0x-prefixed hex string).",
+      "type": "string"
+    }
+  }
+}

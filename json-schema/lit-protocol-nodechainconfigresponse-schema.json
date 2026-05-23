@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/NodeChainConfigResponse",
+  "title": "NodeChainConfigResponse",
+  "type": "object",
+  "required": [
+    "chain_id",
+    "chain_name",
+    "contract_address",
+    "is_evm",
+    "testnet",
+    "token"
+  ],
+  "properties": {
+    "chain_name": {
+      "type": "string"
+    },
+    "chain_id": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "is_evm": {
+      "type": "boolean"
+    },
+    "testnet": {
+      "type": "boolean"
+    },
+    "token": {
+      "type": "string"
+    },
+    "contract_address": {
+      "type": "string"
+    }
+  }
+}

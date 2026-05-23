@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreatePaymentIntentResponse",
+  "title": "CreatePaymentIntentResponse",
+  "description": "POST /billing/create_payment_intent \u2014 client secret for Stripe.js confirmCardPayment.",
+  "type": "object",
+  "required": [
+    "client_secret",
+    "payment_intent_id"
+  ],
+  "properties": {
+    "client_secret": {
+      "type": "string"
+    },
+    "payment_intent_id": {
+      "type": "string"
+    }
+  }
+}

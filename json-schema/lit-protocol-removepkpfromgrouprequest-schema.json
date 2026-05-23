@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RemovePkpFromGroupRequest",
+  "title": "RemovePkpFromGroupRequest",
+  "type": "object",
+  "required": [
+    "group_id",
+    "pkp_id"
+  ],
+  "properties": {
+    "group_id": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "pkp_id": {
+      "type": "string"
+    }
+  }
+}

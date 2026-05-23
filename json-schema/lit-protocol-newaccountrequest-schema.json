@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/NewAccountRequest",
+  "title": "NewAccountRequest",
+  "type": "object",
+  "required": [
+    "account_description",
+    "account_name"
+  ],
+  "properties": {
+    "account_name": {
+      "type": "string"
+    },
+    "account_description": {
+      "type": "string"
+    },
+    "email": {
+      "description": "Optional email address \u2014 forwarded to Stripe for the customer record.  Not stored on-chain.",
+      "default": null,
+      "type": "string",
+      "nullable": true
+    }
+  }
+}

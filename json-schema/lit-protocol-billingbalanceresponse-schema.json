@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BillingBalanceResponse",
+  "title": "BillingBalanceResponse",
+  "description": "GET /billing/balance \u2014 current credit balance for the authenticated API key.",
+  "type": "object",
+  "required": [
+    "balance_cents",
+    "balance_display"
+  ],
+  "properties": {
+    "balance_cents": {
+      "description": "Balance in cents.  Negative means credits are available; zero means exhausted.",
+      "type": "integer",
+      "format": "int64"
+    },
+    "balance_display": {
+      "description": "Human-readable, e.g. \"$5.00 credit\".",
+      "type": "string"
+    }
+  }
+}

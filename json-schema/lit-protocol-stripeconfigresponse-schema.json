@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/StripeConfigResponse",
+  "title": "StripeConfigResponse",
+  "description": "GET /billing/stripe_config \u2014 returns the Stripe publishable key for Stripe.js.",
+  "type": "object",
+  "required": [
+    "publishable_key"
+  ],
+  "properties": {
+    "publishable_key": {
+      "type": "string"
+    }
+  }
+}

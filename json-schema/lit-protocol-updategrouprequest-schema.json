@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/UpdateGroupRequest",
+  "title": "UpdateGroupRequest",
+  "description": "Request for update_group (AccountConfig.updateGroup). API key via header.",
+  "type": "object",
+  "required": [
+    "description",
+    "group_id",
+    "name"
+  ],
+  "properties": {
+    "group_id": {
+      "description": "Group ID (decimal or hex string).",
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "pkp_ids_permitted": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cid_hashes_permitted": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

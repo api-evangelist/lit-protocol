@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LitActionClientConfigResponse",
+  "title": "LitActionClientConfigResponse",
+  "description": "GET /get_lit_action_client_config \u2014 effective ClientBuilder configuration values, including any chain-config overrides applied at startup.",
+  "type": "object",
+  "required": [
+    "async_timeout_ms",
+    "client_timeout_ms_buffer",
+    "max_code_length",
+    "max_console_log_length",
+    "max_fetch_count",
+    "max_get_keys_count",
+    "max_response_length",
+    "max_retries",
+    "memory_limit_mb",
+    "timeout_ms"
+  ],
+  "properties": {
+    "timeout_ms": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "async_timeout_ms": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "memory_limit_mb": {
+      "type": "integer",
+      "format": "uint32",
+      "minimum": 0.0
+    },
+    "max_code_length": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "max_response_length": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "max_console_log_length": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "max_fetch_count": {
+      "type": "integer",
+      "format": "uint32",
+      "minimum": 0.0
+    },
+    "max_get_keys_count": {
+      "type": "integer",
+      "format": "uint32",
+      "minimum": 0.0
+    },
+    "max_retries": {
+      "type": "integer",
+      "format": "uint32",
+      "minimum": 0.0
+    },
+    "client_timeout_ms_buffer": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    }
+  }
+}

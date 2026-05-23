@@ -1,0 +1,742 @@
+{
+  "provider": "Lit Protocol",
+  "providerId": "lit-protocol",
+  "kind": "json-structure",
+  "description": "Structural overview of the Lit Protocol API surface; extracted from openapi/.",
+  "schemaCount": 40,
+  "operationCount": 37,
+  "schemas": [
+    {
+      "name": "ApiKeyItem",
+      "type": "object",
+      "propertyCount": 13,
+      "required": [
+        "api_key_hash",
+        "balance",
+        "can_add_pkp_to_groups",
+        "can_create_groups",
+        "can_create_pkps",
+        "can_delete_groups",
+        "can_execute_in_groups",
+        "can_manage_ipfs_ids_in_groups",
+        "can_remove_pkp_from_groups",
+        "description",
+        "expiration",
+        "id",
+        "name"
+      ]
+    },
+    {
+      "name": "ErrMessage",
+      "type": "string",
+      "propertyCount": 0,
+      "required": []
+    },
+    {
+      "name": "NewAccountResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "api_key",
+        "wallet_address"
+      ]
+    },
+    {
+      "name": "NewAccountRequest",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "account_description",
+        "account_name"
+      ]
+    },
+    {
+      "name": "AccountOpResponse",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "success"
+      ]
+    },
+    {
+      "name": "ConvertToChainSecuredAccountRequest",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "new_admin_wallet_address",
+        "signature",
+        "typed_data"
+      ]
+    },
+    {
+      "name": "CreateWalletResponse",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "wallet_address"
+      ]
+    },
+    {
+      "name": "CreateWalletWithSignatureResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "derivation_path",
+        "wallet_address"
+      ]
+    },
+    {
+      "name": "CreateWalletWithSignatureRequest",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "signature",
+        "typed_data"
+      ]
+    },
+    {
+      "name": "LitActionResponse",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "has_error",
+        "logs",
+        "response"
+      ]
+    },
+    {
+      "name": "LitActionRequest",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "AddGroupResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "group_id",
+        "success"
+      ]
+    },
+    {
+      "name": "AddGroupRequest",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "cid_hashes_permitted",
+        "group_description",
+        "group_name",
+        "pkp_ids_permitted"
+      ]
+    },
+    {
+      "name": "RemoveGroupRequest",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "group_id"
+      ]
+    },
+    {
+      "name": "AddActionRequest",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "action_ipfs_cid",
+        "description",
+        "name"
+      ]
+    },
+    {
+      "name": "DeleteActionRequest",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "hashed_cid"
+      ]
+    },
+    {
+      "name": "AddActionToGroupRequest",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "action_ipfs_cid",
+        "group_id"
+      ]
+    },
+    {
+      "name": "AddPkpToGroupRequest",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "group_id",
+        "pkp_id"
+      ]
+    },
+    {
+      "name": "RemovePkpFromGroupRequest",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "group_id",
+        "pkp_id"
+      ]
+    },
+    {
+      "name": "AddUsageApiKeyResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "success",
+        "usage_api_key"
+      ]
+    },
+    {
+      "name": "AddUsageApiKeyRequest",
+      "type": "object",
+      "propertyCount": 9,
+      "required": [
+        "add_pkp_to_groups",
+        "can_create_groups",
+        "can_create_pkps",
+        "can_delete_groups",
+        "description",
+        "execute_in_groups",
+        "manage_ipfs_ids_in_groups",
+        "name",
+        "remove_pkp_from_groups"
+      ]
+    },
+    {
+      "name": "AddUsageApiKeyWithSignatureResponse",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "derivation_path",
+        "usage_api_key",
+        "wallet_address"
+      ]
+    },
+    {
+      "name": "AddUsageApiKeyWithSignatureRequest",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "signature",
+        "typed_data"
+      ]
+    },
+    {
+      "name": "UpdateUsageApiKeyRequest",
+      "type": "object",
+      "propertyCount": 10,
+      "required": [
+        "add_pkp_to_groups",
+        "can_create_groups",
+        "can_create_pkps",
+        "can_delete_groups",
+        "description",
+        "execute_in_groups",
+        "manage_ipfs_ids_in_groups",
+        "name",
+        "remove_pkp_from_groups",
+        "usage_api_key"
+      ]
+    },
+    {
+      "name": "RemoveUsageApiKeyRequest",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "usage_api_key"
+      ]
+    },
+    {
+      "name": "UpdateGroupRequest",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "description",
+        "group_id",
+        "name"
+      ]
+    },
+    {
+      "name": "RemoveActionFromGroupRequest",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "group_id",
+        "hashed_cid"
+      ]
+    },
+    {
+      "name": "UpdateActionMetadataRequest",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "description",
+        "hashed_cid",
+        "name"
+      ]
+    },
+    {
+      "name": "UpdateUsageApiKeyMetadataRequest",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "description",
+        "name",
+        "usage_api_key"
+      ]
+    },
+    {
+      "name": "ListMetadataItem",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "description",
+        "id",
+        "name"
+      ]
+    },
+    {
+      "name": "WalletItem",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "description",
+        "id",
+        "name",
+        "wallet_address"
+      ]
+    },
+    {
+      "name": "NodeChainConfigResponse",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "chain_id",
+        "chain_name",
+        "contract_address",
+        "is_evm",
+        "testnet",
+        "token"
+      ]
+    },
+    {
+      "name": "ChainConfigKeysResponse",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "keys"
+      ]
+    },
+    {
+      "name": "LitActionClientConfigResponse",
+      "type": "object",
+      "propertyCount": 10,
+      "required": [
+        "async_timeout_ms",
+        "client_timeout_ms_buffer",
+        "max_code_length",
+        "max_console_log_length",
+        "max_fetch_count",
+        "max_get_keys_count",
+        "max_response_length",
+        "max_retries",
+        "memory_limit_mb",
+        "timeout_ms"
+      ]
+    },
+    {
+      "name": "StripeConfigResponse",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "publishable_key"
+      ]
+    },
+    {
+      "name": "BillingBalanceResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "balance_cents",
+        "balance_display"
+      ]
+    },
+    {
+      "name": "CreatePaymentIntentResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "client_secret",
+        "payment_intent_id"
+      ]
+    },
+    {
+      "name": "CreatePaymentIntentRequest",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "amount_cents"
+      ]
+    },
+    {
+      "name": "ConfirmPaymentRequest",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "payment_intent_id"
+      ]
+    },
+    {
+      "name": "VersionResponse",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "commit_version",
+        "name",
+        "submodule_versions",
+        "version"
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/list_api_keys",
+      "operationId": "list_api_keys",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/new_account",
+      "operationId": "new_account",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/convert_to_chain_secured_account",
+      "operationId": "convert_to_chain_secured_account",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/account_exists",
+      "operationId": "account_exists",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/create_wallet",
+      "operationId": "create_wallet",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/create_wallet_with_signature",
+      "operationId": "create_wallet_with_signature",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/lit_action",
+      "operationId": "lit_action",
+      "summary": null,
+      "tags": [
+        "Actions"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/get_lit_action_ipfs_id",
+      "operationId": "get_lit_action_ipfs_id",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/add_group",
+      "operationId": "add_group",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/remove_group",
+      "operationId": "remove_group",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/add_action",
+      "operationId": "add_action",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/delete_action",
+      "operationId": "delete_action",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/add_action_to_group",
+      "operationId": "add_action_to_group",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/add_pkp_to_group",
+      "operationId": "add_pkp_to_group",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/remove_pkp_from_group",
+      "operationId": "remove_pkp_from_group",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/add_usage_api_key",
+      "operationId": "add_usage_api_key",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/add_usage_api_key_with_signature",
+      "operationId": "add_usage_api_key_with_signature",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/update_usage_api_key",
+      "operationId": "update_usage_api_key",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/remove_usage_api_key",
+      "operationId": "remove_usage_api_key",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/update_group",
+      "operationId": "update_group",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/remove_action_from_group",
+      "operationId": "remove_action_from_group",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/update_action_metadata",
+      "operationId": "update_action_metadata",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/update_usage_api_key_metadata",
+      "operationId": "update_usage_api_key_metadata",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/list_groups",
+      "operationId": "list_groups",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/list_wallets",
+      "operationId": "list_wallets",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/list_wallets_in_group",
+      "operationId": "list_wallets_in_group",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/list_actions",
+      "operationId": "list_actions",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/get_node_chain_config",
+      "operationId": "get_node_chain_config",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/get_chain_config_keys",
+      "operationId": "get_chain_config_keys",
+      "summary": null,
+      "tags": [
+        "Account Management"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/get_lit_action_client_config",
+      "operationId": "get_lit_action_client_config",
+      "summary": null,
+      "tags": [
+        "Configuration"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/get_api_payers",
+      "operationId": "get_api_payers",
+      "summary": null,
+      "tags": [
+        "Configuration"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/get_admin_api_payer",
+      "operationId": "get_admin_api_payer",
+      "summary": null,
+      "tags": [
+        "Configuration"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/billing/stripe_config",
+      "operationId": "billing_stripe_config",
+      "summary": null,
+      "tags": [
+        "Billing"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/billing/balance",
+      "operationId": "billing_balance",
+      "summary": null,
+      "tags": [
+        "Billing"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/billing/create_payment_intent",
+      "operationId": "billing_create_payment_intent",
+      "summary": null,
+      "tags": [
+        "Billing"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/billing/confirm_payment",
+      "operationId": "billing_confirm_payment",
+      "summary": null,
+      "tags": [
+        "Billing"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/version",
+      "operationId": "get_version",
+      "summary": null,
+      "tags": [
+        "Configuration"
+      ]
+    }
+  ]
+}

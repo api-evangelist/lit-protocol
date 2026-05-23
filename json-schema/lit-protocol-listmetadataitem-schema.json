@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ListMetadataItem",
+  "title": "ListMetadataItem",
+  "description": "One item from list_groups, list_wallets, list_wallets_in_group, or list_actions (AccountConfig.sol Metadata).",
+  "type": "object",
+  "required": [
+    "description",
+    "id",
+    "name"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

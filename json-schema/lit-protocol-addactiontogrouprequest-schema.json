@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AddActionToGroupRequest",
+  "title": "AddActionToGroupRequest",
+  "type": "object",
+  "required": [
+    "action_ipfs_cid",
+    "group_id"
+  ],
+  "properties": {
+    "group_id": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "action_ipfs_cid": {
+      "description": "IPFS CID for the action (will be keccak256-hashed on server).",
+      "type": "string"
+    }
+  }
+}

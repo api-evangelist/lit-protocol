@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/UpdateUsageApiKeyMetadataRequest",
+  "title": "UpdateUsageApiKeyMetadataRequest",
+  "description": "Request for update_usage_api_key_metadata (AccountConfig.updateUsageApiKeyMetadata). API key via header.",
+  "type": "object",
+  "required": [
+    "description",
+    "name",
+    "usage_api_key"
+  ],
+  "properties": {
+    "usage_api_key": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

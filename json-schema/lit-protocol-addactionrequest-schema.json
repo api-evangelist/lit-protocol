@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AddActionRequest",
+  "title": "AddActionRequest",
+  "type": "object",
+  "required": [
+    "action_ipfs_cid",
+    "description",
+    "name"
+  ],
+  "properties": {
+    "action_ipfs_cid": {
+      "description": "IPFS CID for the action (keccak256-hashed on server).",
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

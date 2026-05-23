@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ConfirmPaymentRequest",
+  "title": "ConfirmPaymentRequest",
+  "description": "POST /billing/confirm_payment",
+  "type": "object",
+  "required": [
+    "payment_intent_id"
+  ],
+  "properties": {
+    "payment_intent_id": {
+      "type": "string"
+    }
+  }
+}

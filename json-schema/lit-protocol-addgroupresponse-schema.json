@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AddGroupResponse",
+  "title": "AddGroupResponse",
+  "description": "Response for add_group, includes the on-chain group ID.",
+  "type": "object",
+  "required": [
+    "group_id",
+    "success"
+  ],
+  "properties": {
+    "success": {
+      "type": "boolean"
+    },
+    "group_id": {
+      "type": "string"
+    }
+  }
+}

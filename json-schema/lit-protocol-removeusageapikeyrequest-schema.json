@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RemoveUsageApiKeyRequest",
+  "title": "RemoveUsageApiKeyRequest",
+  "description": "API key via header.",
+  "type": "object",
+  "required": [
+    "usage_api_key"
+  ],
+  "properties": {
+    "usage_api_key": {
+      "type": "string"
+    }
+  }
+}

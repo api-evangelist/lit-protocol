@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreatePaymentIntentRequest",
+  "title": "CreatePaymentIntentRequest",
+  "description": "POST /billing/create_payment_intent",
+  "type": "object",
+  "required": [
+    "amount_cents"
+  ],
+  "properties": {
+    "amount_cents": {
+      "description": "Amount to charge in US cents (minimum 500 = $5.00).",
+      "type": "integer",
+      "format": "int64"
+    }
+  }
+}

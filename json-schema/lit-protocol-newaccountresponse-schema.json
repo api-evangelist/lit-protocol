@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/NewAccountResponse",
+  "title": "NewAccountResponse",
+  "type": "object",
+  "required": [
+    "api_key",
+    "wallet_address"
+  ],
+  "properties": {
+    "api_key": {
+      "type": "string"
+    },
+    "wallet_address": {
+      "type": "string"
+    }
+  }
+}

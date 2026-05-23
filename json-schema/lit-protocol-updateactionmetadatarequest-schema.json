@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/UpdateActionMetadataRequest",
+  "title": "UpdateActionMetadataRequest",
+  "description": "Request for update_action_metadata. hashed_cid is already a keccak256 hash (hex string). API key via header.",
+  "type": "object",
+  "required": [
+    "description",
+    "hashed_cid",
+    "name"
+  ],
+  "properties": {
+    "hashed_cid": {
+      "description": "Already-hashed CID for the action (0x-prefixed hex string).",
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

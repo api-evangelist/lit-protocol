@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AddUsageApiKeyWithSignatureRequest",
+  "title": "AddUsageApiKeyWithSignatureRequest",
+  "description": "ChainSecured usage-key minting. Mirrors `CreateWalletWithSignatureRequest`: the user proves wallet ownership with an EIP-712 typed-data signature, the server mints a usage-key wallet via DStack MPC and returns the secret (as the usage API key) plus address + derivation path. The client follows up with on-chain `registerWalletDerivation` and `setUsageApiKey` signed by their admin wallet \u2014 only the admin wallet of a ChainSecured account can call `setUsageApiKey` (see AppStorage.accountExistsAndIsMutable).",
+  "type": "object",
+  "required": [
+    "signature",
+    "typed_data"
+  ],
+  "properties": {
+    "typed_data": {
+      "description": "EIP-712 typed-data object the wallet signed. Must use `primaryType: \"AddUsageApiKey\"` and the canonical schema (see `core::eip712`)."
+    },
+    "signature": {
+      "description": "65-byte 0x-prefixed signature (r||s||v) over the EIP-712 digest of `typed_data`.",
+      "type": "string"
+    }
+  }
+}

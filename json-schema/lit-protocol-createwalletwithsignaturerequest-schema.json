@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreateWalletWithSignatureRequest",
+  "title": "CreateWalletWithSignatureRequest",
+  "description": "ChainSecured wallet creation. The client signs EIP-712 typed data with their wallet; the server verifies the signature, mints a PKP via DStack MPC, and returns the new wallet address + derivation path so the client can register it on-chain via `registerWalletDerivation`.\n\nThe server does not maintain a nonce store. Replay protection is a \u00b15-minute window on the `issuedAt` field plus the per-flow primaryType binding \u2014 worst-case replay still just mints an extra unregistered PKP (compute cost only; registration requires a separate wallet signature on-chain).",
+  "type": "object",
+  "required": [
+    "signature",
+    "typed_data"
+  ],
+  "properties": {
+    "typed_data": {
+      "description": "EIP-712 typed-data object the wallet signed. Must use `primaryType: \"CreateWallet\"` and the canonical schema (see `core::eip712`)."
+    },
+    "signature": {
+      "description": "65-byte 0x-prefixed signature (r||s||v) over the EIP-712 digest of `typed_data`.",
+      "type": "string"
+    }
+  }
+}

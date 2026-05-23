@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AddGroupRequest",
+  "title": "AddGroupRequest",
+  "description": "Request for add_group. permitted_actions and pkps are keccak256 hashes as hex strings (with or without 0x). API key via header.",
+  "type": "object",
+  "required": [
+    "cid_hashes_permitted",
+    "group_description",
+    "group_name",
+    "pkp_ids_permitted"
+  ],
+  "properties": {
+    "group_name": {
+      "description": "Name of the group (Group.metadata.name in AccountConfig.sol).",
+      "type": "string"
+    },
+    "group_description": {
+      "description": "Description of the group (Group.metadata.description in AccountConfig.sol).",
+      "type": "string"
+    },
+    "pkp_ids_permitted": {
+      "description": "pkp ids permitted to use the group (AccountConfig.sol Group.pkpId).",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cid_hashes_permitted": {
+      "description": "Actions permitted to use the group (AccountConfig.sol Group.cidHash).",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
