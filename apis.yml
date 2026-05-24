@@ -58,6 +58,8 @@ common:
     url: rate-limits/lit-protocol-rate-limits.yml
   - type: FinOps
     url: finops/lit-protocol-finops.yml
+  - type: LLMsTxt
+    url: https://developer.litprotocol.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
