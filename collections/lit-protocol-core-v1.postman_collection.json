@@ -1,0 +1,3430 @@
+{
+  "item": [
+    {
+      "id": "965c987d-ed43-4a9a-b459-c237a711ed0b",
+      "name": "Account Management",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "daf934a2-1e77-44f9-924d-d87ad8af64f9",
+          "name": "list api keys",
+          "request": {
+            "name": "list api keys",
+            "description": {},
+            "url": {
+              "path": [
+                "list_api_keys"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<uint64>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<uint64>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7718ec67-7f6a-41fc-a043-ccc1d636ef6d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "list_api_keys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page_number",
+                      "value": "<uint64>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<uint64>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"api_key_hash\": \"string\",\n    \"balance\": 5623,\n    \"can_add_pkp_to_groups\": [\n      1013,\n      6030\n    ],\n    \"can_create_groups\": true,\n    \"can_create_pkps\": false,\n    \"can_delete_groups\": false,\n    \"can_execute_in_groups\": [\n      4765,\n      7965\n    ],\n    \"can_manage_ipfs_ids_in_groups\": [\n      9864,\n      2333\n    ],\n    \"can_remove_pkp_from_groups\": [\n      4822,\n      5751\n    ],\n    \"description\": \"string\",\n    \"expiration\": \"string\",\n    \"id\": \"string\",\n    \"name\": \"string\"\n  },\n  {\n    \"api_key_hash\": \"string\",\n    \"balance\": 3762,\n    \"can_add_pkp_to_groups\": [\n      3622,\n      8778\n    ],\n    \"can_create_groups\": true,\n    \"can_create_pkps\": true,\n    \"can_delete_groups\": false,\n    \"can_execute_in_groups\": [\n      3809,\n      5788\n    ],\n    \"can_manage_ipfs_ids_in_groups\": [\n      5790,\n      8535\n    ],\n    \"can_remove_pkp_from_groups\": [\n      2550,\n      4793\n    ],\n    \"description\": \"string\",\n    \"expiration\": \"string\",\n    \"id\": \"string\",\n    \"name\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a42c65f7-0392-4399-ae79-68ed724669b4",
+          "name": "new account",
+          "request": {
+            "name": "new account",
+            "description": {},
+            "url": {
+              "path": [
+                "new_account"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"account_description\": \"<string>\",\n  \"account_name\": \"<string>\",\n  \"email\": null\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "52168722-1dc5-4ad3-a6dc-d611a596c6b2",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "new_account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"account_description\": \"<string>\",\n  \"account_name\": \"<string>\",\n  \"email\": null\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"api_key\": \"string\",\n  \"wallet_address\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a43d78ae-6141-4367-b207-669bde29d9b6",
+          "name": "convert to chain secured account",
+          "request": {
+            "name": "convert to chain secured account",
+            "description": {},
+            "url": {
+              "path": [
+                "convert_to_chain_secured_account"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"new_admin_wallet_address\": \"<string>\",\n  \"signature\": \"<string>\",\n  \"typed_data\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7aa530d8-f20a-4f3f-a75b-7991274b8edc",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert_to_chain_secured_account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"new_admin_wallet_address\": \"<string>\",\n  \"signature\": \"<string>\",\n  \"typed_data\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fde0830f-eabd-4f8d-94f6-3faebec80e4d",
+          "name": "account exists",
+          "request": {
+            "name": "account exists",
+            "description": {},
+            "url": {
+              "path": [
+                "account_exists"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5d2278d9-0034-4937-b765-9ef699d44bf2",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "account_exists"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "false",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7b8d0e7c-f569-4f63-905d-ea45d7fb8e1f",
+          "name": "create wallet",
+          "request": {
+            "name": "create wallet",
+            "description": {},
+            "url": {
+              "path": [
+                "create_wallet"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "196901a6-5ee8-4726-a456-d8e4c4685472",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "create_wallet"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"wallet_address\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "72d3d793-4b6f-4a3d-b609-8891e5e919ed",
+          "name": "create wallet with signature",
+          "request": {
+            "name": "create wallet with signature",
+            "description": {},
+            "url": {
+              "path": [
+                "create_wallet_with_signature"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"signature\": \"<string>\",\n  \"typed_data\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c9e63cbf-523d-47df-a2a4-0d1717e5cb81",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "create_wallet_with_signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"signature\": \"<string>\",\n  \"typed_data\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"derivation_path\": \"string\",\n  \"wallet_address\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "43cfdc9a-f804-460c-8981-31c9e075d1dc",
+          "name": "get lit action ipfs id",
+          "request": {
+            "name": "get lit action ipfs id",
+            "description": {},
+            "url": {
+              "path": [
+                "get_lit_action_ipfs_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "21c35802-0392-42b6-9bb1-029ae3f73128",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get_lit_action_ipfs_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<string>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e118d101-81f7-4be6-9cf1-6683212e456e",
+          "name": "add group",
+          "request": {
+            "name": "add group",
+            "description": {},
+            "url": {
+              "path": [
+                "add_group"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cid_hashes_permitted\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"group_description\": \"<string>\",\n  \"group_name\": \"<string>\",\n  \"pkp_ids_permitted\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f79464d0-8580-4fac-a90f-7b2cfd8458a7",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "add_group"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"cid_hashes_permitted\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"group_description\": \"<string>\",\n  \"group_name\": \"<string>\",\n  \"pkp_ids_permitted\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"group_id\": \"string\",\n  \"success\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eeecaca9-fae1-4a56-961a-268aac77b554",
+          "name": "remove group",
+          "request": {
+            "name": "remove group",
+            "description": {},
+            "url": {
+              "path": [
+                "remove_group"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"group_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ad11259d-0218-4610-87cf-f726290070db",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "remove_group"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"group_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bb877996-bbf3-492b-9faa-d90ef6e2c33c",
+          "name": "add action",
+          "request": {
+            "name": "add action",
+            "description": {},
+            "url": {
+              "path": [
+                "add_action"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action_ipfs_cid\": \"<string>\",\n  \"description\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "721fe79b-9653-49de-97f2-1ac03a5126eb",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "add_action"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action_ipfs_cid\": \"<string>\",\n  \"description\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8b162a21-724a-40e5-bfa6-ca1d7ab7b0c6",
+          "name": "delete action",
+          "request": {
+            "name": "delete action",
+            "description": {},
+            "url": {
+              "path": [
+                "delete_action"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"hashed_cid\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "81b59c47-d429-48bd-9c2f-01cb6c80d829",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "delete_action"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"hashed_cid\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a34caa29-54cc-4659-955e-f7cbbd8ceb94",
+          "name": "add action to group",
+          "request": {
+            "name": "add action to group",
+            "description": {},
+            "url": {
+              "path": [
+                "add_action_to_group"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action_ipfs_cid\": \"<string>\",\n  \"group_id\": \"<uint64>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "79d98bdf-70ab-4298-b0b2-2d02c3df68f0",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "add_action_to_group"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"action_ipfs_cid\": \"<string>\",\n  \"group_id\": \"<uint64>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2aa512be-cd24-42cb-bb8f-4bb2fa2e8e91",
+          "name": "add pkp to group",
+          "request": {
+            "name": "add pkp to group",
+            "description": {},
+            "url": {
+              "path": [
+                "add_pkp_to_group"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"group_id\": \"<uint64>\",\n  \"pkp_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "26299b29-f24a-4b42-84b7-e4cae87d7d2d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "add_pkp_to_group"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"group_id\": \"<uint64>\",\n  \"pkp_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "22d18b0e-ef1d-4530-a581-5ea32835fdd0",
+          "name": "remove pkp from group",
+          "request": {
+            "name": "remove pkp from group",
+            "description": {},
+            "url": {
+              "path": [
+                "remove_pkp_from_group"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"group_id\": \"<uint64>\",\n  \"pkp_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f73c5293-5dda-442d-bbbe-2444b0bd59ed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "remove_pkp_from_group"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"group_id\": \"<uint64>\",\n  \"pkp_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e641ffac-15b1-4d7f-9578-32713ab4673e",
+          "name": "add usage api key",
+          "request": {
+            "name": "add usage api key",
+            "description": {},
+            "url": {
+              "path": [
+                "add_usage_api_key"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"add_pkp_to_groups\": [\n    \"<uint64>\",\n    \"<uint64>\"\n  ],\n  \"can_create_groups\": \"<boolean>\",\n  \"can_create_pkps\": \"<boolean>\",\n  \"can_delete_groups\": \"<boolean>\",\n  \"description\": \"<string>\",\n  \"execute_in_groups\": [\n    \"<uint64>\",\n    \"<uint64>\"\n  ],\n  \"manage_ipfs_ids_in_groups\": [\n    \"<uint64>\",\n    \"<uint64>\"\n  ],\n  \"name\": \"<string>\",\n  \"remove_pkp_from_groups\": [\n    \"<uint64>\",\n    \"<uint64>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b1ad45d5-293e-461b-bfac-860e6746dc24",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "add_usage_api_key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"add_pkp_to_groups\": [\n    \"<uint64>\",\n    \"<uint64>\"\n  ],\n  \"can_create_groups\": \"<boolean>\",\n  \"can_create_pkps\": \"<boolean>\",\n  \"can_delete_groups\": \"<boolean>\",\n  \"description\": \"<string>\",\n  \"execute_in_groups\": [\n    \"<uint64>\",\n    \"<uint64>\"\n  ],\n  \"manage_ipfs_ids_in_groups\": [\n    \"<uint64>\",\n    \"<uint64>\"\n  ],\n  \"name\": \"<string>\",\n  \"remove_pkp_from_groups\": [\n    \"<uint64>\",\n    \"<uint64>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"usage_api_key\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "81559b78-7677-4c36-be05-170e57a29c09",
+          "name": "add usage api key with signature",
+          "request": {
+            "name": "add usage api key with signature",
+            "description": {},
+            "url": {
+              "path": [
+                "add_usage_api_key_with_signature"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"signature\": \"<string>\",\n  \"typed_data\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2d5ef44d-589b-44f9-9c37-d8b3a8af5b2d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "add_usage_api_key_with_signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"signature\": \"<string>\",\n  \"typed_data\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"derivation_path\": \"string\",\n  \"usage_api_key\": \"string\",\n  \"wallet_address\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "73ecc278-1ec6-4191-aa86-e31970e30be1",
+          "name": "update usage api key",
+          "request": {
+            "name": "update usage api key",
+            "description": {},
+            "url": {
+              "path": [
+                "update_usage_api_key"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"add_pkp_to_groups\": [\n    \"<uint64>\",\n    \"<uint64>\"\n  ],\n  \"can_create_groups\": \"<boolean>\",\n  \"can_create_pkps\": \"<boolean>\",\n  \"can_delete_groups\": \"<boolean>\",\n  \"description\": \"<string>\",\n  \"execute_in_groups\": [\n    \"<uint64>\",\n    \"<uint64>\"\n  ],\n  \"manage_ipfs_ids_in_groups\": [\n    \"<uint64>\",\n    \"<uint64>\"\n  ],\n  \"name\": \"<string>\",\n  \"remove_pkp_from_groups\": [\n    \"<uint64>\",\n    \"<uint64>\"\n  ],\n  \"usage_api_key\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "62f92022-e223-470b-9354-36ed2c61bd85",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update_usage_api_key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"add_pkp_to_groups\": [\n    \"<uint64>\",\n    \"<uint64>\"\n  ],\n  \"can_create_groups\": \"<boolean>\",\n  \"can_create_pkps\": \"<boolean>\",\n  \"can_delete_groups\": \"<boolean>\",\n  \"description\": \"<string>\",\n  \"execute_in_groups\": [\n    \"<uint64>\",\n    \"<uint64>\"\n  ],\n  \"manage_ipfs_ids_in_groups\": [\n    \"<uint64>\",\n    \"<uint64>\"\n  ],\n  \"name\": \"<string>\",\n  \"remove_pkp_from_groups\": [\n    \"<uint64>\",\n    \"<uint64>\"\n  ],\n  \"usage_api_key\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bbfea6ec-a2a7-4fd2-8128-cd79d5143de5",
+          "name": "remove usage api key",
+          "request": {
+            "name": "remove usage api key",
+            "description": {},
+            "url": {
+              "path": [
+                "remove_usage_api_key"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usage_api_key\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "01faad35-a32a-4258-970c-0cf6c535f774",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "remove_usage_api_key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"usage_api_key\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2737bc2c-4868-4b6d-973f-aa3d048fa8ed",
+          "name": "update group",
+          "request": {
+            "name": "update group",
+            "description": {},
+            "url": {
+              "path": [
+                "update_group"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"<string>\",\n  \"group_id\": \"<uint64>\",\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d3c0951b-ead5-42cd-998a-fea9ea926795",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update_group"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"group_id\": \"<uint64>\",\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c57c0c24-4aea-476e-bd6c-1d90394ed4ba",
+          "name": "remove action from group",
+          "request": {
+            "name": "remove action from group",
+            "description": {},
+            "url": {
+              "path": [
+                "remove_action_from_group"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"group_id\": \"<uint64>\",\n  \"hashed_cid\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "95ba2867-650c-43c0-8564-a366b057aa72",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "remove_action_from_group"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"group_id\": \"<uint64>\",\n  \"hashed_cid\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6b6f9a8f-0a78-4e8f-8104-9f03fe1813bb",
+          "name": "update action metadata",
+          "request": {
+            "name": "update action metadata",
+            "description": {},
+            "url": {
+              "path": [
+                "update_action_metadata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"<string>\",\n  \"hashed_cid\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b5b3bb80-1282-463f-a46e-13172a9185b7",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update_action_metadata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"hashed_cid\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ef2e6b42-7e73-41cf-9ab6-48b75385f0b7",
+          "name": "update usage api key metadata",
+          "request": {
+            "name": "update usage api key metadata",
+            "description": {},
+            "url": {
+              "path": [
+                "update_usage_api_key_metadata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"usage_api_key\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ead70e8c-1681-4348-99f4-260a20f77550",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "update_usage_api_key_metadata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"usage_api_key\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bfec5fd8-4d87-4cf9-ba9b-57f7e729d0e3",
+          "name": "list groups",
+          "request": {
+            "name": "list groups",
+            "description": {},
+            "url": {
+              "path": [
+                "list_groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<uint64>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<uint64>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d2ede05d-c841-4bf2-aafe-bc934f412aae",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "list_groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page_number",
+                      "value": "<uint64>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<uint64>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"description\": \"string\",\n    \"id\": \"string\",\n    \"name\": \"string\"\n  },\n  {\n    \"description\": \"string\",\n    \"id\": \"string\",\n    \"name\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c8924476-632e-4379-910f-0ea5c2f34b4a",
+          "name": "list wallets",
+          "request": {
+            "name": "list wallets",
+            "description": {},
+            "url": {
+              "path": [
+                "list_wallets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<uint64>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<uint64>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7fed754d-0426-4fd5-b909-2d910ab709ac",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "list_wallets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page_number",
+                      "value": "<uint64>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<uint64>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"description\": \"string\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"wallet_address\": \"string\"\n  },\n  {\n    \"description\": \"string\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"wallet_address\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3a8b0227-e10b-4d86-a2fc-7b7d062bcd78",
+          "name": "list wallets in group",
+          "request": {
+            "name": "list wallets in group",
+            "description": {},
+            "url": {
+              "path": [
+                "list_wallets_in_group"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "group_id",
+                  "value": "<uint64>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<uint64>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<uint64>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "83b1c61c-3347-422d-bc54-b029e7b99380",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "list_wallets_in_group"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "group_id",
+                      "value": "<uint64>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<uint64>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<uint64>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"description\": \"string\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"wallet_address\": \"string\"\n  },\n  {\n    \"description\": \"string\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"wallet_address\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e57858a7-f102-4b83-ac94-9806b435154b",
+          "name": "list actions",
+          "request": {
+            "name": "list actions",
+            "description": {},
+            "url": {
+              "path": [
+                "list_actions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "group_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<uint64>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<uint64>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1176955d-52c3-419c-a573-b21228311738",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "list_actions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "group_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<uint64>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<uint64>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"description\": \"string\",\n    \"id\": \"string\",\n    \"name\": \"string\"\n  },\n  {\n    \"description\": \"string\",\n    \"id\": \"string\",\n    \"name\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f58d9d3d-90ce-4758-8f93-dcff80dc6aa9",
+          "name": "get node chain config",
+          "request": {
+            "name": "get node chain config",
+            "description": {},
+            "url": {
+              "path": [
+                "get_node_chain_config"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e68f5d9b-1a7d-4d3b-a06d-762a2206dd48",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get_node_chain_config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"chain_id\": 6262,\n  \"chain_name\": \"string\",\n  \"contract_address\": \"string\",\n  \"is_evm\": false,\n  \"testnet\": true,\n  \"token\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5bdfda2e-5fda-4633-a049-e666ebff378c",
+          "name": "get chain config keys",
+          "request": {
+            "name": "get chain config keys",
+            "description": {},
+            "url": {
+              "path": [
+                "get_chain_config_keys"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a0c5616b-2e52-4f27-ab6b-61bb835d345d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get_chain_config_keys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"keys\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "dbbf1302-1f1d-4f73-a733-368aca826ed1",
+      "name": "Actions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f12e039b-6be7-4f22-92c1-8699f7d563d9",
+          "name": "lit action",
+          "request": {
+            "name": "lit action",
+            "description": {},
+            "url": {
+              "path": [
+                "lit_action"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": null,\n  \"ipfs_id\": null,\n  \"js_params\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "23180301-c405-4b17-8138-ae79f0241efb",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lit_action"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Account or usage API key. Alternatively use Authorization: Bearer <key>.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": null,\n  \"ipfs_id\": null,\n  \"js_params\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"has_error\": true,\n  \"logs\": \"string\",\n  \"response\": \"\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "10de8afa-b456-4613-92d8-35b44c28613b",
+      "name": "Configuration",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "36f1a89f-4d24-43ff-a650-e39b0a7c922f",
+          "name": "get lit action client config",
+          "request": {
+            "name": "get lit action client config",
+            "description": {},
+            "url": {
+              "path": [
+                "get_lit_action_client_config"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "726100a4-6758-4482-9161-6dbdee5747b8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get_lit_action_client_config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"async_timeout_ms\": 1289,\n  \"client_timeout_ms_buffer\": 5939,\n  \"max_code_length\": 7451,\n  \"max_console_log_length\": 8577,\n  \"max_fetch_count\": 9810,\n  \"max_get_keys_count\": 2769,\n  \"max_response_length\": 9473,\n  \"max_retries\": 2354,\n  \"memory_limit_mb\": 1583,\n  \"timeout_ms\": 6912\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4fb29d0a-3d03-4eab-9fec-61bf32af49d4",
+          "name": "get api payers",
+          "request": {
+            "name": "get api payers",
+            "description": {},
+            "url": {
+              "path": [
+                "get_api_payers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1a01d3ab-d55e-4395-8f32-fbeeeb743fb4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get_api_payers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  \"string\",\n  \"string\"\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4345499c-cc94-46c9-8871-868686387726",
+          "name": "get admin api payer",
+          "request": {
+            "name": "get admin api payer",
+            "description": {},
+            "url": {
+              "path": [
+                "get_admin_api_payer"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d38ea0ca-73a2-4dcc-9a3b-5a4d2191d833",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "get_admin_api_payer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "68fdc123-12a2-4217-94a2-ee2dbdb5edf5",
+          "name": "get version",
+          "request": {
+            "name": "get version",
+            "description": {},
+            "url": {
+              "path": [
+                "version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "76c9877e-4090-4379-9471-de82a01e78d5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"commit_version\": \"string\",\n  \"name\": \"string\",\n  \"submodule_versions\": [\n    [],\n    []\n  ],\n  \"version\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "e3a0b968-c308-4b4f-b0f3-a35289fab8e4",
+      "name": "Billing",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "88f4f0de-b7c4-4e03-bb0c-bb32ba531b7c",
+          "name": "billing stripe config",
+          "request": {
+            "name": "billing stripe config",
+            "description": {
+              "content": "GET /billing/stripe_config — returns the Stripe publishable key. No auth required; the publishable key is safe to expose.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "billing",
+                "stripe_config"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9f71d07c-9542-44b3-b665-28019f0d3873",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "billing",
+                    "stripe_config"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"publishable_key\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "61174517-163f-4622-8006-bf9bd62a0e55",
+          "name": "billing balance",
+          "request": {
+            "name": "billing balance",
+            "description": {
+              "content": "GET /billing/balance — returns the current credit balance for the authenticated user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "billing",
+                "balance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "API-mode auth: account or usage API key (alternatively `Authorization: Bearer <key>`). OR — for ChainSecured callers — omit X-Api-Key entirely and send `X-Wallet-Auth: <base64(JSON{typed_data, signature})>` where `typed_data` is EIP-712 with `primaryType: \"BillingAuth\"`. The signature proves wallet possession; the typed data must include the connected wallet address and an issuedAt timestamp within ±5 minutes.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3991bc23-d446-4475-accf-9585da5a003a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "billing",
+                    "balance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "API-mode auth: account or usage API key (alternatively `Authorization: Bearer <key>`). OR — for ChainSecured callers — omit X-Api-Key entirely and send `X-Wallet-Auth: <base64(JSON{typed_data, signature})>` where `typed_data` is EIP-712 with `primaryType: \"BillingAuth\"`. The signature proves wallet possession; the typed data must include the connected wallet address and an issuedAt timestamp within ±5 minutes.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"balance_cents\": 7725,\n  \"balance_display\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d7f92f86-3a70-4bfe-8949-230210490ebc",
+          "name": "billing create payment intent",
+          "request": {
+            "name": "billing create payment intent",
+            "description": {
+              "content": "POST /billing/create_payment_intent — creates a Stripe PaymentIntent and returns the client_secret for use with Stripe.js `confirmCardPayment`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "billing",
+                "create_payment_intent"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "API-mode auth: account or usage API key (alternatively `Authorization: Bearer <key>`). OR — for ChainSecured callers — omit X-Api-Key entirely and send `X-Wallet-Auth: <base64(JSON{typed_data, signature})>` where `typed_data` is EIP-712 with `primaryType: \"BillingAuth\"`. The signature proves wallet possession; the typed data must include the connected wallet address and an issuedAt timestamp within ±5 minutes.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount_cents\": \"<long>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e4d48ed5-3066-4e3e-802c-fbf0aa72526b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "billing",
+                    "create_payment_intent"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "API-mode auth: account or usage API key (alternatively `Authorization: Bearer <key>`). OR — for ChainSecured callers — omit X-Api-Key entirely and send `X-Wallet-Auth: <base64(JSON{typed_data, signature})>` where `typed_data` is EIP-712 with `primaryType: \"BillingAuth\"`. The signature proves wallet possession; the typed data must include the connected wallet address and an issuedAt timestamp within ±5 minutes.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"amount_cents\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"client_secret\": \"string\",\n  \"payment_intent_id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8491d445-1663-4e0d-9728-d6438395c96e",
+          "name": "billing confirm payment",
+          "request": {
+            "name": "billing confirm payment",
+            "description": {
+              "content": "POST /billing/confirm_payment — verifies a succeeded PaymentIntent and credits the account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "billing",
+                "confirm_payment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "API-mode auth: account or usage API key (alternatively `Authorization: Bearer <key>`). OR — for ChainSecured callers — omit X-Api-Key entirely and send `X-Wallet-Auth: <base64(JSON{typed_data, signature})>` where `typed_data` is EIP-712 with `primaryType: \"BillingAuth\"`. The signature proves wallet possession; the typed data must include the connected wallet address and an issuedAt timestamp within ±5 minutes.",
+                "key": "X-Api-Key",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"payment_intent_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3d26eba5-0b79-4eca-86bb-560eba512598",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "billing",
+                    "confirm_payment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "API-mode auth: account or usage API key (alternatively `Authorization: Bearer <key>`). OR — for ChainSecured callers — omit X-Api-Key entirely and send `X-Wallet-Auth: <base64(JSON{typed_data, signature})>` where `typed_data` is EIP-712 with `primaryType: \"BillingAuth\"`. The signature proves wallet possession; the typed data must include the connected wallet address and an issuedAt timestamp within ±5 minutes.",
+                    "key": "X-Api-Key",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"payment_intent_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/core/v1/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "fe2194f2-48a4-4877-8217-a0cba8b1f929",
+    "name": "lit-api-server",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lit Express Node API Server",
+      "type": "text/plain"
+    }
+  }
+}

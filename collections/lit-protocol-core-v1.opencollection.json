@@ -1,0 +1,730 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "lit-api-server",
+    "version": "0.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Account Management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "list_api_keys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/core/v1/list_api_keys",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "page_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "new_account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/new_account",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "convert_to_chain_secured_account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/convert_to_chain_secured_account",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "account_exists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/core/v1/account_exists",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "create_wallet",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/core/v1/create_wallet",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "create_wallet_with_signature",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/create_wallet_with_signature",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "get_lit_action_ipfs_id",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/get_lit_action_ipfs_id",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "add_group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/add_group",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "remove_group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/remove_group",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "add_action",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/add_action",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "delete_action",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/delete_action",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "add_action_to_group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/add_action_to_group",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "add_pkp_to_group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/add_pkp_to_group",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "remove_pkp_from_group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/remove_pkp_from_group",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "add_usage_api_key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/add_usage_api_key",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "add_usage_api_key_with_signature",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/add_usage_api_key_with_signature",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "update_usage_api_key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/update_usage_api_key",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "remove_usage_api_key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/remove_usage_api_key",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "update_group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/update_group",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "remove_action_from_group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/remove_action_from_group",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "update_action_metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/update_action_metadata",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "update_usage_api_key_metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/update_usage_api_key_metadata",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "list_groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/core/v1/list_groups",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "page_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "list_wallets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/core/v1/list_wallets",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "page_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "list_wallets_in_group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/core/v1/list_wallets_in_group",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "list_actions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/core/v1/list_actions",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_node_chain_config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/core/v1/get_node_chain_config"
+          }
+        },
+        {
+          "info": {
+            "name": "get_chain_config_keys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/core/v1/get_chain_config_keys"
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Actions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "lit_action",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/lit_action",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Configuration",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get_lit_action_client_config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/core/v1/get_lit_action_client_config"
+          }
+        },
+        {
+          "info": {
+            "name": "get_api_payers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/core/v1/get_api_payers"
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_api_payer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/core/v1/get_admin_api_payer"
+          }
+        },
+        {
+          "info": {
+            "name": "get_version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/core/v1/version"
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Billing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "billing_stripe_config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/core/v1/billing/stripe_config"
+          },
+          "docs": "GET /billing/stripe_config — returns the Stripe publishable key. No auth required; the publishable key is safe to expose."
+        },
+        {
+          "info": {
+            "name": "billing_balance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/core/v1/billing/balance",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "GET /billing/balance — returns the current credit balance for the authenticated user."
+        },
+        {
+          "info": {
+            "name": "billing_create_payment_intent",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/billing/create_payment_intent",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "POST /billing/create_payment_intent — creates a Stripe PaymentIntent and returns the client_secret for use with Stripe.js `confirmCardPayment`."
+        },
+        {
+          "info": {
+            "name": "billing_confirm_payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/billing/confirm_payment",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "POST /billing/confirm_payment — verifies a succeeded PaymentIntent and credits the account."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
