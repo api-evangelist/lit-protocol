@@ -46,6 +46,8 @@ apis:
     - type: Documentation
       url: https://developer.litprotocol.com/v3/sdk/installation
 common:
+  - type: DomainSecurity
+    url: security/lit-protocol-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/LIT-Protocol
   - type: LinkedIn
@@ -60,6 +62,8 @@ common:
     url: finops/lit-protocol-finops.yml
   - type: LlmsText
     url: https://developer.litprotocol.com/llms.txt
+  - url: https://spark.litprotocol.com/rss/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
