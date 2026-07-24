@@ -1,0 +1,151 @@
+openapi: 3.0.0
+info:
+  title: lit-api-server Account Management Configuration API
+  description: Lit Express Node API Server
+  version: 0.1.0
+servers:
+- url: /core/v1/
+  description: Lit Protocol Express API (Core v1)
+tags:
+- name: Configuration
+paths:
+  /get_lit_action_client_config:
+    get:
+      tags:
+      - Configuration
+      operationId: get_lit_action_client_config
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/LitActionClientConfigResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+  /get_api_payers:
+    get:
+      tags:
+      - Configuration
+      operationId: get_api_payers
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - type: array
+                  items:
+                    type: string
+                - $ref: '#/components/schemas/ErrMessage'
+  /get_admin_api_payer:
+    get:
+      tags:
+      - Configuration
+      operationId: get_admin_api_payer
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - type: string
+                - $ref: '#/components/schemas/ErrMessage'
+  /version:
+    get:
+      tags:
+      - Configuration
+      operationId: get_version
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/VersionResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+components:
+  schemas:
+    LitActionClientConfigResponse:
+      description: GET /get_lit_action_client_config — effective ClientBuilder configuration values, including any chain-config overrides applied at startup.
+      type: object
+      required:
+      - async_timeout_ms
+      - client_timeout_ms_buffer
+      - max_code_length
+      - max_console_log_length
+      - max_fetch_count
+      - max_get_keys_count
+      - max_response_length
+      - max_retries
+      - memory_limit_mb
+      - timeout_ms
+      properties:
+        timeout_ms:
+          type: integer
+          format: uint64
+          minimum: 0.0
+        async_timeout_ms:
+          type: integer
+          format: uint64
+          minimum: 0.0
+        memory_limit_mb:
+          type: integer
+          format: uint32
+          minimum: 0.0
+        max_code_length:
+          type: integer
+          format: uint64
+          minimum: 0.0
+        max_response_length:
+          type: integer
+          format: uint64
+          minimum: 0.0
+        max_console_log_length:
+          type: integer
+          format: uint64
+          minimum: 0.0
+        max_fetch_count:
+          type: integer
+          format: uint32
+          minimum: 0.0
+        max_get_keys_count:
+          type: integer
+          format: uint32
+          minimum: 0.0
+        max_retries:
+          type: integer
+          format: uint32
+          minimum: 0.0
+        client_timeout_ms_buffer:
+          type: integer
+          format: uint64
+          minimum: 0.0
+    ErrMessage:
+      type: string
+    VersionResponse:
+      type: object
+      required:
+      - commit_version
+      - name
+      - submodule_versions
+      - version
+      properties:
+        name:
+          type: string
+        version:
+          type: string
+        commit_version:
+          type: string
+        submodule_versions:
+          type: array
+          items:
+            type: array
+            items:
+            - type: string
+            - type: string
+            maxItems: 2
+            minItems: 2

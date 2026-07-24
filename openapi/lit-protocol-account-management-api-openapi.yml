@@ -1,0 +1,1306 @@
+openapi: 3.0.0
+info:
+  title: lit-api-server Account Management API
+  description: Lit Express Node API Server
+  version: 0.1.0
+servers:
+- url: /core/v1/
+  description: Lit Protocol Express API (Core v1)
+tags:
+- name: Account Management
+paths:
+  /list_api_keys:
+    get:
+      tags:
+      - Account Management
+      operationId: list_api_keys
+      parameters:
+      - name: page_number
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: uint64
+          minimum: 0.0
+      - name: page_size
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: uint64
+          minimum: 0.0
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - type: array
+                  items:
+                    $ref: '#/components/schemas/ApiKeyItem'
+                - $ref: '#/components/schemas/ErrMessage'
+  /new_account:
+    post:
+      tags:
+      - Account Management
+      operationId: new_account
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewAccountRequest'
+        required: true
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/NewAccountResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+  /convert_to_chain_secured_account:
+    post:
+      tags:
+      - Account Management
+      operationId: convert_to_chain_secured_account
+      parameters:
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConvertToChainSecuredAccountRequest'
+        required: true
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/AccountOpResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+  /account_exists:
+    get:
+      tags:
+      - Account Management
+      operationId: account_exists
+      parameters:
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - type: boolean
+                - $ref: '#/components/schemas/ErrMessage'
+  /create_wallet:
+    get:
+      tags:
+      - Account Management
+      operationId: create_wallet
+      parameters:
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/CreateWalletResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+  /create_wallet_with_signature:
+    post:
+      tags:
+      - Account Management
+      operationId: create_wallet_with_signature
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateWalletWithSignatureRequest'
+        required: true
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/CreateWalletWithSignatureResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+  /get_lit_action_ipfs_id:
+    post:
+      tags:
+      - Account Management
+      operationId: get_lit_action_ipfs_id
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+        required: true
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - type: string
+                - $ref: '#/components/schemas/ErrMessage'
+  /add_group:
+    post:
+      tags:
+      - Account Management
+      operationId: add_group
+      parameters:
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddGroupRequest'
+        required: true
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/AddGroupResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+  /remove_group:
+    post:
+      tags:
+      - Account Management
+      operationId: remove_group
+      parameters:
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RemoveGroupRequest'
+        required: true
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/AccountOpResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+  /add_action:
+    post:
+      tags:
+      - Account Management
+      operationId: add_action
+      parameters:
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddActionRequest'
+        required: true
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/AccountOpResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+  /delete_action:
+    post:
+      tags:
+      - Account Management
+      operationId: delete_action
+      parameters:
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteActionRequest'
+        required: true
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/AccountOpResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+  /add_action_to_group:
+    post:
+      tags:
+      - Account Management
+      operationId: add_action_to_group
+      parameters:
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddActionToGroupRequest'
+        required: true
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/AccountOpResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+  /add_pkp_to_group:
+    post:
+      tags:
+      - Account Management
+      operationId: add_pkp_to_group
+      parameters:
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddPkpToGroupRequest'
+        required: true
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/AccountOpResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+  /remove_pkp_from_group:
+    post:
+      tags:
+      - Account Management
+      operationId: remove_pkp_from_group
+      parameters:
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RemovePkpFromGroupRequest'
+        required: true
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/AccountOpResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+  /add_usage_api_key:
+    post:
+      tags:
+      - Account Management
+      operationId: add_usage_api_key
+      parameters:
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddUsageApiKeyRequest'
+        required: true
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/AddUsageApiKeyResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+  /add_usage_api_key_with_signature:
+    post:
+      tags:
+      - Account Management
+      operationId: add_usage_api_key_with_signature
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddUsageApiKeyWithSignatureRequest'
+        required: true
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/AddUsageApiKeyWithSignatureResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+  /update_usage_api_key:
+    post:
+      tags:
+      - Account Management
+      operationId: update_usage_api_key
+      parameters:
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateUsageApiKeyRequest'
+        required: true
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/AccountOpResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+  /remove_usage_api_key:
+    post:
+      tags:
+      - Account Management
+      operationId: remove_usage_api_key
+      parameters:
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RemoveUsageApiKeyRequest'
+        required: true
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/AccountOpResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+  /update_group:
+    post:
+      tags:
+      - Account Management
+      operationId: update_group
+      parameters:
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateGroupRequest'
+        required: true
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/AccountOpResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+  /remove_action_from_group:
+    post:
+      tags:
+      - Account Management
+      operationId: remove_action_from_group
+      parameters:
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RemoveActionFromGroupRequest'
+        required: true
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/AccountOpResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+  /update_action_metadata:
+    post:
+      tags:
+      - Account Management
+      operationId: update_action_metadata
+      parameters:
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateActionMetadataRequest'
+        required: true
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/AccountOpResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+  /update_usage_api_key_metadata:
+    post:
+      tags:
+      - Account Management
+      operationId: update_usage_api_key_metadata
+      parameters:
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateUsageApiKeyMetadataRequest'
+        required: true
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/AccountOpResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+  /list_groups:
+    get:
+      tags:
+      - Account Management
+      operationId: list_groups
+      parameters:
+      - name: page_number
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: uint64
+          minimum: 0.0
+      - name: page_size
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: uint64
+          minimum: 0.0
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - type: array
+                  items:
+                    $ref: '#/components/schemas/ListMetadataItem'
+                - $ref: '#/components/schemas/ErrMessage'
+  /list_wallets:
+    get:
+      tags:
+      - Account Management
+      operationId: list_wallets
+      parameters:
+      - name: page_number
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: uint64
+          minimum: 0.0
+      - name: page_size
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: uint64
+          minimum: 0.0
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - type: array
+                  items:
+                    $ref: '#/components/schemas/WalletItem'
+                - $ref: '#/components/schemas/ErrMessage'
+  /list_wallets_in_group:
+    get:
+      tags:
+      - Account Management
+      operationId: list_wallets_in_group
+      parameters:
+      - name: group_id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: uint64
+          minimum: 0.0
+      - name: page_number
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: uint64
+          minimum: 0.0
+      - name: page_size
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: uint64
+          minimum: 0.0
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - type: array
+                  items:
+                    $ref: '#/components/schemas/WalletItem'
+                - $ref: '#/components/schemas/ErrMessage'
+  /list_actions:
+    get:
+      tags:
+      - Account Management
+      operationId: list_actions
+      parameters:
+      - name: group_id
+        in: query
+        schema:
+          type: string
+          nullable: true
+      - name: page_number
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: uint64
+          minimum: 0.0
+      - name: page_size
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: uint64
+          minimum: 0.0
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - type: array
+                  items:
+                    $ref: '#/components/schemas/ListMetadataItem'
+                - $ref: '#/components/schemas/ErrMessage'
+  /get_node_chain_config:
+    get:
+      tags:
+      - Account Management
+      operationId: get_node_chain_config
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/NodeChainConfigResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+  /get_chain_config_keys:
+    get:
+      tags:
+      - Account Management
+      operationId: get_chain_config_keys
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ChainConfigKeysResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+components:
+  schemas:
+    AddUsageApiKeyRequest:
+      description: Request for add_usage_api_key. expiration and balance as decimal strings (e.g. unix timestamp, wei). API key via header.
+      type: object
+      required:
+      - add_pkp_to_groups
+      - can_create_groups
+      - can_create_pkps
+      - can_delete_groups
+      - description
+      - execute_in_groups
+      - manage_ipfs_ids_in_groups
+      - name
+      - remove_pkp_from_groups
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        can_create_groups:
+          type: boolean
+        can_delete_groups:
+          type: boolean
+        can_create_pkps:
+          type: boolean
+        manage_ipfs_ids_in_groups:
+          description: Group IDs to grant manage-IPFS-IDs permission. 0 is wildcard for all groups.
+          type: array
+          items:
+            type: integer
+            format: uint64
+            minimum: 0.0
+        add_pkp_to_groups:
+          description: Group IDs to grant add-PKP permission. 0 is wildcard for all groups.
+          type: array
+          items:
+            type: integer
+            format: uint64
+            minimum: 0.0
+        remove_pkp_from_groups:
+          description: Group IDs to grant remove-PKP permission. 0 is wildcard for all groups.
+          type: array
+          items:
+            type: integer
+            format: uint64
+            minimum: 0.0
+        execute_in_groups:
+          description: Group IDs to grant execute permission. 0 is wildcard for all groups.
+          type: array
+          items:
+            type: integer
+            format: uint64
+            minimum: 0.0
+    ApiKeyItem:
+      description: One item from list_api_keys (AccountConfig.sol UsageApiKey).
+      type: object
+      required:
+      - api_key_hash
+      - balance
+      - can_add_pkp_to_groups
+      - can_create_groups
+      - can_create_pkps
+      - can_delete_groups
+      - can_execute_in_groups
+      - can_manage_ipfs_ids_in_groups
+      - can_remove_pkp_from_groups
+      - description
+      - expiration
+      - id
+      - name
+      properties:
+        id:
+          type: string
+        api_key_hash:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        expiration:
+          type: string
+        balance:
+          type: integer
+          format: uint64
+          minimum: 0.0
+        can_create_groups:
+          type: boolean
+        can_delete_groups:
+          type: boolean
+        can_create_pkps:
+          type: boolean
+        can_manage_ipfs_ids_in_groups:
+          type: array
+          items:
+            type: integer
+            format: uint64
+            minimum: 0.0
+        can_add_pkp_to_groups:
+          type: array
+          items:
+            type: integer
+            format: uint64
+            minimum: 0.0
+        can_remove_pkp_from_groups:
+          type: array
+          items:
+            type: integer
+            format: uint64
+            minimum: 0.0
+        can_execute_in_groups:
+          type: array
+          items:
+            type: integer
+            format: uint64
+            minimum: 0.0
+    AddUsageApiKeyResponse:
+      description: Response for account config operations (add_group, add_pkp_to_group, remove_pkp_from_group, add_usage_api_key, remove_usage_api_key).
+      type: object
+      required:
+      - success
+      - usage_api_key
+      properties:
+        success:
+          type: boolean
+        usage_api_key:
+          type: string
+    AddGroupResponse:
+      description: Response for add_group, includes the on-chain group ID.
+      type: object
+      required:
+      - group_id
+      - success
+      properties:
+        success:
+          type: boolean
+        group_id:
+          type: string
+    DeleteActionRequest:
+      description: Request for delete_action. hashed_cid is already a keccak256 hash (hex string). API key via header.
+      type: object
+      required:
+      - hashed_cid
+      properties:
+        hashed_cid:
+          description: Already-hashed CID for the action (0x-prefixed hex string).
+          type: string
+    ChainConfigKeysResponse:
+      description: GET /get_chain_config_keys — names of every supported ConfigKeys variant.
+      type: object
+      required:
+      - keys
+      properties:
+        keys:
+          type: array
+          items:
+            type: string
+    CreateWalletWithSignatureRequest:
+      description: 'ChainSecured wallet creation. The client signs EIP-712 typed data with their wallet; the server verifies the signature, mints a PKP via DStack MPC, and returns the new wallet address + derivation path so the client can register it on-chain via `registerWalletDerivation`.
+
+
+        The server does not maintain a nonce store. Replay protection is a ±5-minute window on the `issuedAt` field plus the per-flow primaryType binding — worst-case replay still just mints an extra unregistered PKP (compute cost only; registration requires a separate wallet signature on-chain).'
+      type: object
+      required:
+      - signature
+      - typed_data
+      properties:
+        typed_data:
+          description: 'EIP-712 typed-data object the wallet signed. Must use `primaryType: "CreateWallet"` and the canonical schema (see `core::eip712`).'
+        signature:
+          description: 65-byte 0x-prefixed signature (r||s||v) over the EIP-712 digest of `typed_data`.
+          type: string
+    AddUsageApiKeyWithSignatureRequest:
+      description: 'ChainSecured usage-key minting. Mirrors `CreateWalletWithSignatureRequest`: the user proves wallet ownership with an EIP-712 typed-data signature, the server mints a usage-key wallet via DStack MPC and returns the secret (as the usage API key) plus address + derivation path. The client follows up with on-chain `registerWalletDerivation` and `setUsageApiKey` signed by their admin wallet — only the admin wallet of a ChainSecured account can call `setUsageApiKey` (see AppStorage.accountExistsAndIsMutable).'
+      type: object
+      required:
+      - signature
+      - typed_data
+      properties:
+        typed_data:
+          description: 'EIP-712 typed-data object the wallet signed. Must use `primaryType: "AddUsageApiKey"` and the canonical schema (see `core::eip712`).'
+        signature:
+          description: 65-byte 0x-prefixed signature (r||s||v) over the EIP-712 digest of `typed_data`.
+          type: string
+    UpdateUsageApiKeyRequest:
+      description: Request for update_usage_api_key. Updates all permissions and metadata on an existing usage API key. API key via header.
+      type: object
+      required:
+      - add_pkp_to_groups
+      - can_create_groups
+      - can_create_pkps
+      - can_delete_groups
+      - description
+      - execute_in_groups
+      - manage_ipfs_ids_in_groups
+      - name
+      - remove_pkp_from_groups
+      - usage_api_key
+      properties:
+        usage_api_key:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        can_create_groups:
+          type: boolean
+        can_delete_groups:
+          type: boolean
+        can_create_pkps:
+          type: boolean
+        manage_ipfs_ids_in_groups:
+          description: Group IDs to grant manage-IPFS-IDs permission. 0 is wildcard for all groups.
+          type: array
+          items:
+            type: integer
+            format: uint64
+            minimum: 0.0
+        add_pkp_to_groups:
+          description: Group IDs to grant add-PKP permission. 0 is wildcard for all groups.
+          type: array
+          items:
+            type: integer
+            format: uint64
+            minimum: 0.0
+        remove_pkp_from_groups:
+          description: Group IDs to grant remove-PKP permission. 0 is wildcard for all groups.
+          type: array
+          items:
+            type: integer
+            format: uint64
+            minimum: 0.0
+        execute_in_groups:
+          description: Group IDs to grant execute permission. 0 is wildcard for all groups.
+          type: array
+          items:
+            type: integer
+            format: uint64
+            minimum: 0.0
+    CreateWalletResponse:
+      type: object
+      required:
+      - wallet_address
+      properties:
+        wallet_address:
+          type: string
+    NodeChainConfigResponse:
+      type: object
+      required:
+      - chain_id
+      - chain_name
+      - contract_address
+      - is_evm
+      - testnet
+      - token
+      properties:
+        chain_name:
+          type: string
+        chain_id:
+          type: integer
+          format: uint64
+          minimum: 0.0
+        is_evm:
+          type: boolean
+        testnet:
+          type: boolean
+        token:
+          type: string
+        contract_address:
+          type: string
+    NewAccountResponse:
+      type: object
+      required:
+      - api_key
+      - wallet_address
+      properties:
+        api_key:
+          type: string
+        wallet_address:
+          type: string
+    NewAccountRequest:
+      type: object
+      required:
+      - account_description
+      - account_name
+      properties:
+        account_name:
+          type: string
+        account_description:
+          type: string
+        email:
+          description: Optional email address — forwarded to Stripe for the customer record.  Not stored on-chain.
+          default: null
+          type: string
+          nullable: true
+    AccountOpResponse:
+      description: Response for account config operations (add_pkp_to_group, remove_pkp_from_group, add_usage_api_key, remove_usage_api_key).
+      type: object
+      required:
+      - success
+      properties:
+        success:
+          type: boolean
+    AddPkpToGroupRequest:
+      type: object
+      required:
+      - group_id
+      - pkp_id
+      properties:
+        group_id:
+          description: Group ID (decimal or hex string).
+          type: integer
+          format: uint64
+          minimum: 0.0
+        pkp_id:
+          type: string
+    UpdateUsageApiKeyMetadataRequest:
+      description: Request for update_usage_api_key_metadata (AccountConfig.updateUsageApiKeyMetadata). API key via header.
+      type: object
+      required:
+      - description
+      - name
+      - usage_api_key
+      properties:
+        usage_api_key:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+    AddUsageApiKeyWithSignatureResponse:
+      description: Returned by `/add_usage_api_key_with_signature`. The client must follow up with on-chain `registerWalletDerivation(adminHash, wallet_address, derivation_path, name, description)` and `setUsageApiKey(adminHash, keccak256(usage_api_key), …)` — both signed by the admin wallet — to attach the usage key to the ChainSecured account.
+      type: object
+      required:
+      - derivation_path
+      - usage_api_key
+      - wallet_address
+      properties:
+        usage_api_key:
+          description: 'Base64-encoded 32-byte secret. Send as `X-Api-Key` / `Authorization: Bearer …` for usage requests; pass `keccak256(this)` to `setUsageApiKey`.'
+          type: string
+        wallet_address:
+          description: 0x-prefixed lowercase hex EVM address of the minted PKP wallet.
+          type: string
+        derivation_path:
+          description: 0x-prefixed lowercase hex (uint256). Pass through verbatim to `registerWalletDerivation`'s `derivationPath` arg.
+          type: string
+    ErrMessage:
+      type: string
+    WalletItem:
+      description: One item from list_groups, list_wallets, list_wallets_in_group, or list_actions (AccountConfig.sol Metadata).
+      type: object
+      required:
+      - description
+      - id
+      - name
+      - wallet_address
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        wallet_address:
+          type: string
+    UpdateActionMetadataRequest:
+      description: Request for update_action_metadata. hashed_cid is already a keccak256 hash (hex string). API key via header.
+      type: object
+      required:
+      - description
+      - hashed_cid
+      - name
+      properties:
+        hashed_cid:
+          description: Already-hashed CID for the action (0x-prefixed hex string).
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+    RemoveActionFromGroupRequest:
+      description: Request for remove_action_from_group. hashed_cid is already a keccak256 hash (hex string). API key via header.
+      type: object
+      required:
+      - group_id
+      - hashed_cid
+      properties:
+        group_id:
+          type: integer
+          format: uint64
+          minimum: 0.0
+        hashed_cid:
+          description: Already-hashed CID for the action (0x-prefixed hex string).
+          type: string
+    CreateWalletWithSignatureResponse:
+      description: Returned by `/create_wallet_with_signature`. The client must follow up with an on-chain `registerWalletDerivation(adminHash, wallet_address, derivation_path, name, description)` call signed by the same wallet — until that lands, the PKP exists in MPC but is not registered to any account.
+      type: object
+      required:
+      - derivation_path
+      - wallet_address
+      properties:
+        wallet_address:
+          type: string
+        derivation_path:
+          description: 0x-prefixed lowercase hex (uint256). Pass through verbatim to `registerWalletDerivation`'s `derivationPath` arg.
+          type: string
+    UpdateGroupRequest:
+      description: Request for update_group (AccountConfig.updateGroup). API key via header.
+      type: object
+      required:
+      - description
+      - group_id
+      - name
+      properties:
+        group_id:
+          description: Group ID (decimal or hex string).
+          type: integer
+          format: uint64
+          minimum: 0.0
+        name:
+          type: string
+        description:
+          type: string
+        pkp_ids_permitted:
+          default: []
+          type: array
+          items:
+            type: string
+        cid_hashes_permitted:
+          default: []
+          type: array
+          items:
+            type: string
+    ListMetadataItem:
+      description: One item from list_groups, list_wallets, list_wallets_in_group, or list_actions (AccountConfig.sol Metadata).
+      type: object
+      required:
+      - description
+      - id
+      - name
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+    AddGroupRequest:
+      description: Request for add_group. permitted_actions and pkps are keccak256 hashes as hex strings (with or without 0x). API key via header.
+      type: object
+      required:
+      - cid_hashes_permitted
+      - group_description
+      - group_name
+      - pkp_ids_permitted
+      properties:
+        group_name:
+          description: Name of the group (Group.metadata.name in AccountConfig.sol).
+          type: string
+        group_description:
+          description: Description of the group (Group.metadata.description in AccountConfig.sol).
+          type: string
+        pkp_ids_permitted:
+          description: pkp ids permitted to use the group (AccountConfig.sol Group.pkpId).
+          type: array
+          items:
+            type: string
+        cid_hashes_permitted:
+          description: Actions permitted to use the group (AccountConfig.sol Group.cidHash).
+          type: array
+          items:
+            type: string
+    AddActionRequest:
+      type: object
+      required:
+      - action_ipfs_cid
+      - description
+      - name
+      properties:
+        action_ipfs_cid:
+          description: IPFS CID for the action (keccak256-hashed on server).
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+    RemoveUsageApiKeyRequest:
+      description: API key via header.
+      type: object
+      required:
+      - usage_api_key
+      properties:
+        usage_api_key:
+          type: string
+    AddActionToGroupRequest:
+      type: object
+      required:
+      - action_ipfs_cid
+      - group_id
+      properties:
+        group_id:
+          type: integer
+          format: uint64
+          minimum: 0.0
+        action_ipfs_cid:
+          description: IPFS CID for the action (will be keccak256-hashed on server).
+          type: string
+    RemovePkpFromGroupRequest:
+      type: object
+      required:
+      - group_id
+      - pkp_id
+      properties:
+        group_id:
+          type: integer
+          format: uint64
+          minimum: 0.0
+        pkp_id:
+          type: string
+    RemoveGroupRequest:
+      type: object
+      required:
+      - group_id
+      properties:
+        group_id:
+          type: string
+    ConvertToChainSecuredAccountRequest:
+      description: Body for `convert_to_chain_secured_account`. The caller is authenticated by their existing API key (header). The supplied wallet becomes the on-chain admin and the account flips from managed to ChainSecured. The conversion is irreversible.
+      type: object
+      required:
+      - new_admin_wallet_address
+      - signature
+      - typed_data
+      properties:
+        new_admin_wallet_address:
+          description: Hex-encoded EVM address (with or without 0x prefix). Must be the wallet the user controls; verified by an EIP-712 typed-data signature.
+          type: string
+        typed_data:
+          description: 'EIP-712 typed-data object the wallet signed. Must use `primaryType: "ConvertAccount"` and the canonical schema (see `core::eip712`).'
+        signature:
+          description: 65-byte 0x-prefixed signature (r||s||v) over the EIP-712 digest of `typed_data`.
+          type: string

@@ -1,0 +1,73 @@
+openapi: 3.0.0
+info:
+  title: lit-api-server Account Management Actions API
+  description: Lit Express Node API Server
+  version: 0.1.0
+servers:
+- url: /core/v1/
+  description: Lit Protocol Express API (Core v1)
+tags:
+- name: Actions
+paths:
+  /lit_action:
+    post:
+      tags:
+      - Actions
+      operationId: lit_action
+      parameters:
+      - name: X-Api-Key
+        in: header
+        description: 'Account or usage API key. Alternatively use Authorization: Bearer <key>.'
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LitActionRequest'
+        required: true
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/LitActionResponse'
+                - $ref: '#/components/schemas/ErrMessage'
+components:
+  schemas:
+    ErrMessage:
+      type: string
+    LitActionResponse:
+      type: object
+      required:
+      - has_error
+      - logs
+      - response
+      properties:
+        response: {}
+        logs:
+          type: string
+        has_error:
+          type: boolean
+    LitActionRequest:
+      description: 'API key via header.
+
+
+        Provide either `code` (inline JS) or `ipfs_id` (IPFS CID of a previously-cached action). When `code` is provided it is cached by its IPFS hash so subsequent calls can use `ipfs_id`.'
+      type: object
+      properties:
+        code:
+          description: Inline JS source. Optional when `ipfs_id` is supplied.
+          default: null
+          type: string
+          nullable: true
+        ipfs_id:
+          description: IPFS CID of a previously-submitted action. Looked up in the in-memory cache.
+          default: null
+          type: string
+          nullable: true
+        js_params:
+          nullable: true
