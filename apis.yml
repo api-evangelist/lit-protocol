@@ -6,7 +6,19 @@ description: Lit Protocol is a decentralized key management network providing Pr
   Key Pairs (PKPs), Lit Actions (off-chain JS execution), threshold encryption, and
   access-control conditions. The Chipotle Express API exposes account, PKP, and Lit
   Action management as REST endpoints alongside the JavaScript SDK.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Paid
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/lit-protocol.png
 tags:
   - Web3
   - Key Management
@@ -17,34 +29,68 @@ created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
 apis:
-  - aid: lit:chipotle-api
-    name: Lit Protocol Chipotle Express API (Core v1)
-    description: REST API for account management, API keys, PKP minting, IPFS-anchored
-      Lit Actions, encryption/decryption helpers, and credit balance / usage queries.
-    humanURL: https://developer.litprotocol.com/
-    baseURL: https://api.chipotle.litprotocol.com/core/v1
-    tags:
-    - REST
-    - PKP
-    - Lit Actions
-    properties:
-    - type: Documentation
-      url: https://developer.litprotocol.com/
-    - type: OpenAPI
-      url: openapi/lit-protocol-core-v1-openapi.json
-  - aid: lit:network-rpc
-    name: Lit Network Node JSON-RPC (SDK-mediated)
-    description: Threshold-cryptography network of Lit nodes accessed via the Lit JS
-      SDK for signing, encryption, decryption, and Lit Action execution. Direct REST
-      access is via the Chipotle API; raw node JSON-RPC is documented for SDK contributors.
-    humanURL: https://developer.litprotocol.com/v3/sdk/installation
-    baseURL: https://serrano.litgateway.com/web/litaction (SDK-mediated)
-    tags:
-    - JSON-RPC
-    - Network
-    properties:
-    - type: Documentation
-      url: https://developer.litprotocol.com/v3/sdk/installation
+- aid: lit:network-rpc
+  name: Lit Network Node JSON-RPC (SDK-mediated)
+  description: >-
+    Threshold-cryptography network of Lit nodes accessed via the Lit JS SDK for signing, encryption, decryption,
+    and Lit Action execution. Direct REST access is via the Chipotle API; raw node JSON-RPC is documented
+    for SDK contributors.
+  humanURL: https://developer.litprotocol.com/v3/sdk/installation
+  baseURL: https://serrano.litgateway.com/web/litaction (SDK-mediated)
+  tags:
+  - JSON-RPC
+  - Network
+  properties:
+  - type: Documentation
+    url: https://developer.litprotocol.com/v3/sdk/installation
+- aid: lit-protocol:lit-protocol-account-management-api
+  name: Lit Protocol Account Management API
+  description: The Account Management API from Lit Protocol — 28 operation(s) for account management.
+  humanURL: https://developer.litprotocol.com/
+  baseURL: https://api.chipotle.litprotocol.com/core/v1
+  tags:
+  - Account Management
+  properties:
+  - type: OpenAPI
+    url: openapi/lit-protocol-account-management-api-openapi.yml
+  - type: Documentation
+    url: https://developer.litprotocol.com/
+- aid: lit-protocol:lit-protocol-actions-api
+  name: Lit Protocol Actions API
+  description: The Actions API from Lit Protocol — 1 operation(s) for actions.
+  humanURL: https://developer.litprotocol.com/
+  baseURL: https://api.chipotle.litprotocol.com/core/v1
+  tags:
+  - Actions
+  properties:
+  - type: OpenAPI
+    url: openapi/lit-protocol-actions-api-openapi.yml
+  - type: Documentation
+    url: https://developer.litprotocol.com/
+- aid: lit-protocol:lit-protocol-billing-api
+  name: Lit Protocol Billing API
+  description: The Billing API from Lit Protocol — 4 operation(s) for billing.
+  humanURL: https://developer.litprotocol.com/
+  baseURL: https://api.chipotle.litprotocol.com/core/v1
+  tags:
+  - Billing
+  properties:
+  - type: OpenAPI
+    url: openapi/lit-protocol-billing-api-openapi.yml
+  - type: Documentation
+    url: https://developer.litprotocol.com/
+- aid: lit-protocol:lit-protocol-configuration-api
+  name: Lit Protocol Configuration API
+  description: The Configuration API from Lit Protocol — 4 operation(s) for configuration.
+  humanURL: https://developer.litprotocol.com/
+  baseURL: https://api.chipotle.litprotocol.com/core/v1
+  tags:
+  - Configuration
+  properties:
+  - type: OpenAPI
+    url: openapi/lit-protocol-configuration-api-openapi.yml
+  - type: Documentation
+    url: https://developer.litprotocol.com/
 common:
   - type: AgenticAccess
     url: agentic-access/lit-protocol-agentic-access.yml
