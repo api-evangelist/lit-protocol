@@ -1,0 +1,20 @@
+{
+  "provider": "lit-protocol",
+  "sources": [
+    "lit-protocol-account-management-api-openapi.yml",
+    "lit-protocol-actions-api-openapi.yml",
+    "lit-protocol-billing-api-openapi.yml",
+    "lit-protocol-configuration-api-openapi.yml"
+  ],
+  "outputs": [
+    "lit-protocol-account-management-api-openapi.yml",
+    "lit-protocol-actions-api-openapi.yml",
+    "lit-protocol-billing-api-openapi.yml",
+    "lit-protocol-configuration-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
