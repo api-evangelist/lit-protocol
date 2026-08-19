@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "lit-api-server Account Management Configuration API",
+    "version": "0.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Configuration",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get_lit_action_client_config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/core/v1/get_lit_action_client_config"
+          }
+        },
+        {
+          "info": {
+            "name": "get_api_payers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/core/v1/get_api_payers"
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_api_payer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/core/v1/get_admin_api_payer"
+          }
+        },
+        {
+          "info": {
+            "name": "get_version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/core/v1/version"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

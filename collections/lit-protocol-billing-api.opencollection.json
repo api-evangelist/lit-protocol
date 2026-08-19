@@ -1,0 +1,88 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "lit-api-server Account Management Billing API",
+    "version": "0.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Billing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "billing_stripe_config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/core/v1/billing/stripe_config"
+          },
+          "docs": "GET /billing/stripe_config — returns the Stripe publishable key. No auth required; the publishable key is safe to expose."
+        },
+        {
+          "info": {
+            "name": "billing_balance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/core/v1/billing/balance",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "GET /billing/balance — returns the current credit balance for the authenticated user."
+        },
+        {
+          "info": {
+            "name": "billing_create_payment_intent",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/billing/create_payment_intent",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "POST /billing/create_payment_intent — creates a Stripe PaymentIntent and returns the client_secret for use with Stripe.js `confirmCardPayment`."
+        },
+        {
+          "info": {
+            "name": "billing_confirm_payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "/core/v1/billing/confirm_payment",
+            "headers": [
+              {
+                "name": "X-Api-Key",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "POST /billing/confirm_payment — verifies a succeeded PaymentIntent and credits the account."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,40 @@
+# Documentation
+
+## Docs
+
+- [Lit Protocol](https://developer.litprotocol.com/index.md): One programmable runtime for everything between an event and a signed action. Read from any source, compute inside a chain-secured TEE, write to any chain or API — with no backend to trust.
+- [Quick Start](https://developer.litprotocol.com/quickstart.md): Go from zero to a running Lit Action in a few minutes using the Lit Dashboard or the REST API.
+- [Dashboard](https://developer.litprotocol.com/management/dashboard.md)
+- [API](https://developer.litprotocol.com/management/api_direct.md): Using the API directly to configure Chipotle and execute actions.
+- [API Mode vs ChainSecured Mode](https://developer.litprotocol.com/management/account_modes.md): How the two account ownership models differ, when to choose each, and how to move from API mode to ChainSecured.
+- [Pricing](https://developer.litprotocol.com/management/pricing.md): Credit-based pricing for Lit Chipotle — management operations, Lit Action execution, and how to top up your account.
+- [Crypto Payments](https://developer.litprotocol.com/management/crypto.md): How to add funds to your Lit Chipotle account using cryptocurrency via Stripe.
+- [LITKEY](https://developer.litprotocol.com/management/litkey.md): The LITKEY token — pay for Lit Protocol services on-chain and get a 25% discount over credit card.
+- [API Keys](https://developer.litprotocol.com/management/api_keys.md): Understanding account keys and usage keys in Lit Chipotle.
+- [Errors](https://developer.litprotocol.com/management/errors.md): Every error status the API returns, what causes it, and how to fix it.
+- [Overview](https://developer.litprotocol.com/lit-actions/index.md): Lit Actions are immutable JavaScript programs stored on IPFS and executed by the Lit network. They can sign data, encrypt and decrypt secrets, and make arbitrary HTTP requests — all in a verifiable, trustless way.
+- [Module Imports](https://developer.litprotocol.com/lit-actions/imports.md): Lit Actions can now import third-party ESM packages directly from jsDelivr. Every import is pinned to an exact version and verified with SHA-384 integrity hashes before any code reaches the runtime.
+- [WebAssembly (WASM)](https://developer.litprotocol.com/lit-actions/wasm.md): Lit Actions can load and run WebAssembly in the runtime — so real cryptography (threshold ECDSA, ZK), parsers, and anything compiled from Rust, C, C++, or Go runs inside the action.
+- [Examples](https://developer.litprotocol.com/lit-actions/examples.md): Common Lit Action patterns covering signing, encryption, decryption, HTTP fetching, contract calls, sending ETH, gating ERC-20 transfers on sanctions data, multi-source price oracles, AI-consensus prediction-market resolution, permissionless cross-chain token bridging, non-custodial threshold-ECDSA…
+- [Patterns](https://developer.litprotocol.com/lit-actions/patterns.md): Common design patterns for Lit Actions: writing gating logic in plain JavaScript, using action-identity signing to produce immutable proofs, and structuring encrypt/decrypt flows around PKP wallets.
+- [Secrets](https://developer.litprotocol.com/lit-actions/secrets.md): How to use secrets — API keys, tokens, credentials — inside a Lit Action. The PKP-as-vault model, the encrypt-once / decrypt-at-runtime lifecycle, where to store ciphertexts, and how to rotate.
+- [Limits](https://developer.litprotocol.com/lit-actions/limits.md): Default resource limits for Lit Actions on the Chipotle network.
+- [Changes](https://developer.litprotocol.com/lit-actions/migration/changes.md)
+- [Encryption & Decryption](https://developer.litprotocol.com/lit-actions/migration/encryption.md): How encryption and decryption work in Chipotle compared to the official Lit SDK's access-control-conditions approach.
+- [Overview](https://developer.litprotocol.com/lit-triggers/index.md): Lit Triggers runs a Lit Action when something happens — an inbound webhook, a cron tick, or a matching EVM chain event — turning an action into an autonomous, event-driven agent that can fetch data, sign, and transact with a key no human holds.
+- [Creating Triggers](https://developer.litprotocol.com/lit-triggers/triggers.md): Authorize access, create webhook / schedule / chain-event triggers, fire them, and inspect run history against the Lit Triggers API.
+- [Examples](https://developer.litprotocol.com/lit-triggers/examples.md): Copy-paste Lit Action examples for triggers — echo a webhook payload, notarize it with a keyless signature — plus links to full runnable demos with contracts, setup, and end-to-end clients.
+- [Overview](https://developer.litprotocol.com/architecture/index.md): How Lit Chipotle's three composable layers — TEE enclave, on-chain permissions, and IPFS — work together to provide programmable key management.
+- [Chain Secured](https://developer.litprotocol.com/architecture/chain-secured.md): A key's authority lives in smart contracts on Base, and an attested TEE enforces those rules by reading the chain — on-chain authority, signing at API speed.
+- [Groups](https://developer.litprotocol.com/architecture/groups.md): How groups organize wallets, actions, and usage keys in Lit Chipotle.
+- [Authentication Model](https://developer.litprotocol.com/architecture/authModel.md): How accounts, API keys, PKPs, groups, and the TEE root key compose into a programmable KMS — and how API mode vs ChainSecured mode emerges from configuration.
+- [Self-Hosting](https://developer.litprotocol.com/architecture/self-hosting.md): How to think about self-hosting Lit Chipotle, what is open source, and the operational tradeoffs compared with the hosted service.
+- [Entity Relationships](https://developer.litprotocol.com/architecture/diagram.md): Entity relationships, on-chain vs TEE boundaries, and how API mode vs ChainSecured mode emerges from configuration.
+- [What Is Attestation?](https://developer.litprotocol.com/architecture/verification/attestation.md): A plain-English explanation of remote attestation: what a TEE proves, what an attestation quote is, and how a stranger turns 'I received a quote' into 'I can trust this server' — without trusting Lit or the cloud provider.
+- [Verify in 30 Seconds](https://developer.litprotocol.com/architecture/verification/quick-verify.md): One click to confirm the Lit Chipotle API server is running unmodified code inside a genuine Intel TDX enclave — plus three commands to verify it yourself.
+- [Security & Verification](https://developer.litprotocol.com/architecture/verification/index.md): How to verify that your connection to Lit Chipotle terminates inside a genuine TEE running unmodified code.
+- [On-Chain KMS](https://developer.litprotocol.com/architecture/verification/onchain-kms.md): How Lit Chipotle's root keys are gated by smart contracts on Base — not by Phala or Lit — and how to verify the KMS is active and configured correctly.
+- [Upgrade Governance](https://developer.litprotocol.com/architecture/verification/upgrade-governance.md): How a new Lit Chipotle release is approved before it can run: the two independent actions every upgrade requires, the Safe multisig that gates it, what signers verify before approving, and how a self-hoster governs releases on their own terms.
+- [Full Verification Guide](https://developer.litprotocol.com/architecture/verification/full-verification.md): Step-by-step commands to verify every layer of the Lit Chipotle chain of trust: hardware attestation, application code, TLS certificates, and on-chain governance.
+- [Chain of Trust Reference](https://developer.litprotocol.com/architecture/verification/chain-of-trust.md): What each verification layer checks and why it matters — application, platform, network, and governance.
+- [Lit Actions SDK](https://developer.litprotocol.com/lit-actions/chipotle.md)
