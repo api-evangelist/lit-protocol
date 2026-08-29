@@ -6,6 +6,18 @@ description: Lit Protocol is a decentralized key management network providing Pr
   Key Pairs (PKPs), Lit Actions (off-chain JS execution), threshold encryption, and
   access-control conditions. The Chipotle Express API exposes account, PKP, and Lit
   Action management as REST endpoints alongside the JavaScript SDK.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: unknown
