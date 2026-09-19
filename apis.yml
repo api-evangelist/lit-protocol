@@ -51,6 +51,9 @@ apis:
   baseURL: https://serrano.litgateway.com/web/litaction (SDK-mediated)
   tags:
   - JSON-RPC
+  - Networks
+  tags_raw:
+  - JSON-RPC
   - Network
   properties:
   - type: Documentation
