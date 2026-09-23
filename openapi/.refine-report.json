@@ -1,10 +1,7 @@
 {
   "provider": "lit-protocol",
   "sources": [
-    "lit-protocol-account-management-api-openapi.yml",
-    "lit-protocol-actions-api-openapi.yml",
-    "lit-protocol-billing-api-openapi.yml",
-    "lit-protocol-configuration-api-openapi.yml"
+    "_original/lit-protocol-core-v1-openapi.json"
   ],
   "outputs": [
     "lit-protocol-account-management-api-openapi.yml",
@@ -15,6 +12,19 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "lit-protocol-core-v1-openapi.json: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "lit-protocol-core-v1-openapi.json: declared missing tag: Account Management",
+    "lit-protocol-core-v1-openapi.json: declared missing tag: Actions",
+    "lit-protocol-core-v1-openapi.json: declared missing tag: Billing",
+    "lit-protocol-core-v1-openapi.json: declared missing tag: Configuration",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "lit-protocol-account-management-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "lit-protocol-actions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "lit-protocol-billing-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "lit-protocol-configuration-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

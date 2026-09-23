@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: lit-api-server Account Management Actions API
+  title: lit-api-server Actions API
   description: Lit Express Node API Server
   version: 0.1.0
 servers:
@@ -36,10 +36,32 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/LitActionResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Lit action
+      x-summary-source: derived
 components:
   schemas:
     ErrMessage:
       type: string
+    LitActionRequest:
+      description: 'API key via header.
+
+
+        Provide either `code` (inline JS) or `ipfs_id` (IPFS CID of a previously-cached action). When `code` is provided it is cached by its IPFS hash so subsequent calls can use `ipfs_id`.'
+      type: object
+      properties:
+        code:
+          description: Inline JS source. Optional when `ipfs_id` is supplied.
+          default: null
+          type:
+          - string
+          - 'null'
+        ipfs_id:
+          description: IPFS CID of a previously-submitted action. Looked up in the in-memory cache.
+          default: null
+          type:
+          - string
+          - 'null'
+        js_params: {}
     LitActionResponse:
       type: object
       required:
@@ -52,22 +74,3 @@ components:
           type: string
         has_error:
           type: boolean
-    LitActionRequest:
-      description: 'API key via header.
-
-
-        Provide either `code` (inline JS) or `ipfs_id` (IPFS CID of a previously-cached action). When `code` is provided it is cached by its IPFS hash so subsequent calls can use `ipfs_id`.'
-      type: object
-      properties:
-        code:
-          description: Inline JS source. Optional when `ipfs_id` is supplied.
-          default: null
-          type: string
-          nullable: true
-        ipfs_id:
-          description: IPFS CID of a previously-submitted action. Looked up in the in-memory cache.
-          default: null
-          type: string
-          nullable: true
-        js_params:
-          nullable: true

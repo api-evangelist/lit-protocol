@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: lit-api-server Account Management Billing API
+  title: lit-api-server Billing API
   description: Lit Express Node API Server
   version: 0.1.0
 servers:
@@ -24,6 +24,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/StripeConfigResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Billing stripe config
+      x-summary-source: derived
   /billing/balance:
     get:
       tags:
@@ -45,6 +47,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/BillingBalanceResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Billing balance
+      x-summary-source: derived
   /billing/create_payment_intent:
     post:
       tags:
@@ -72,6 +76,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/CreatePaymentIntentResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Billing create payment intent
+      x-summary-source: derived
   /billing/confirm_payment:
     post:
       tags:
@@ -99,37 +105,10 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/AccountOpResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Billing confirm payment
+      x-summary-source: derived
 components:
   schemas:
-    AccountOpResponse:
-      description: Response for account config operations (add_pkp_to_group, remove_pkp_from_group, add_usage_api_key, remove_usage_api_key).
-      type: object
-      required:
-      - success
-      properties:
-        success:
-          type: boolean
-    ErrMessage:
-      type: string
-    CreatePaymentIntentResponse:
-      description: POST /billing/create_payment_intent — client secret for Stripe.js confirmCardPayment.
-      type: object
-      required:
-      - client_secret
-      - payment_intent_id
-      properties:
-        client_secret:
-          type: string
-        payment_intent_id:
-          type: string
-    StripeConfigResponse:
-      description: GET /billing/stripe_config — returns the Stripe publishable key for Stripe.js.
-      type: object
-      required:
-      - publishable_key
-      properties:
-        publishable_key:
-          type: string
     BillingBalanceResponse:
       description: GET /billing/balance — current credit balance for the authenticated API key.
       type: object
@@ -144,14 +123,6 @@ components:
         balance_display:
           description: Human-readable, e.g. "$5.00 credit".
           type: string
-    ConfirmPaymentRequest:
-      description: POST /billing/confirm_payment
-      type: object
-      required:
-      - payment_intent_id
-      properties:
-        payment_intent_id:
-          type: string
     CreatePaymentIntentRequest:
       description: POST /billing/create_payment_intent
       type: object
@@ -162,3 +133,40 @@ components:
           description: Amount to charge in US cents (minimum 500 = $5.00).
           type: integer
           format: int64
+    AccountOpResponse:
+      description: Response for account config operations (add_pkp_to_group, remove_pkp_from_group, add_usage_api_key, remove_usage_api_key).
+      type: object
+      required:
+      - success
+      properties:
+        success:
+          type: boolean
+    StripeConfigResponse:
+      description: GET /billing/stripe_config — returns the Stripe publishable key for Stripe.js.
+      type: object
+      required:
+      - publishable_key
+      properties:
+        publishable_key:
+          type: string
+    ErrMessage:
+      type: string
+    CreatePaymentIntentResponse:
+      description: POST /billing/create_payment_intent — client secret for Stripe.js confirmCardPayment.
+      type: object
+      required:
+      - client_secret
+      - payment_intent_id
+      properties:
+        client_secret:
+          type: string
+        payment_intent_id:
+          type: string
+    ConfirmPaymentRequest:
+      description: POST /billing/confirm_payment
+      type: object
+      required:
+      - payment_intent_id
+      properties:
+        payment_intent_id:
+          type: string

@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: lit-api-server Account Management Configuration API
+  title: lit-api-server Configuration API
   description: Lit Express Node API Server
   version: 0.1.0
 servers:
@@ -23,6 +23,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/LitActionClientConfigResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Get lit action client config
+      x-summary-source: derived
   /get_api_payers:
     get:
       tags:
@@ -39,6 +41,8 @@ paths:
                   items:
                     type: string
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Get api payers
+      x-summary-source: derived
   /get_admin_api_payer:
     get:
       tags:
@@ -53,6 +57,8 @@ paths:
                 oneOf:
                 - type: string
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Get admin api payer
+      x-summary-source: derived
   /version:
     get:
       tags:
@@ -67,8 +73,35 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/VersionResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Get version
+      x-summary-source: derived
 components:
   schemas:
+    ErrMessage:
+      type: string
+    VersionResponse:
+      type: object
+      required:
+      - commit_version
+      - name
+      - submodule_versions
+      - version
+      properties:
+        name:
+          type: string
+        version:
+          type: string
+        commit_version:
+          type: string
+        submodule_versions:
+          type: array
+          items:
+            type: array
+            items:
+            - type: string
+            - type: string
+            maxItems: 2
+            minItems: 2
     LitActionClientConfigResponse:
       description: GET /get_lit_action_client_config — effective ClientBuilder configuration values, including any chain-config overrides applied at startup.
       type: object
@@ -124,28 +157,3 @@ components:
           type: integer
           format: uint64
           minimum: 0.0
-    ErrMessage:
-      type: string
-    VersionResponse:
-      type: object
-      required:
-      - commit_version
-      - name
-      - submodule_versions
-      - version
-      properties:
-        name:
-          type: string
-        version:
-          type: string
-        commit_version:
-          type: string
-        submodule_versions:
-          type: array
-          items:
-            type: array
-            items:
-            - type: string
-            - type: string
-            maxItems: 2
-            minItems: 2

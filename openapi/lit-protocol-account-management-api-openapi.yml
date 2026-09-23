@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   title: lit-api-server Account Management API
   description: Lit Express Node API Server
@@ -46,6 +46,8 @@ paths:
                   items:
                     $ref: '#/components/schemas/ApiKeyItem'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: List api keys
+      x-summary-source: derived
   /new_account:
     post:
       tags:
@@ -66,6 +68,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/NewAccountResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: New account
+      x-summary-source: derived
   /convert_to_chain_secured_account:
     post:
       tags:
@@ -93,6 +97,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/AccountOpResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Convert to chain secured account
+      x-summary-source: derived
   /account_exists:
     get:
       tags:
@@ -114,6 +120,8 @@ paths:
                 oneOf:
                 - type: boolean
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Account exists
+      x-summary-source: derived
   /create_wallet:
     get:
       tags:
@@ -135,6 +143,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/CreateWalletResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Create wallet
+      x-summary-source: derived
   /create_wallet_with_signature:
     post:
       tags:
@@ -155,6 +165,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/CreateWalletWithSignatureResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Create wallet with signature
+      x-summary-source: derived
   /get_lit_action_ipfs_id:
     post:
       tags:
@@ -175,6 +187,8 @@ paths:
                 oneOf:
                 - type: string
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Get lit action ipfs id
+      x-summary-source: derived
   /add_group:
     post:
       tags:
@@ -202,6 +216,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/AddGroupResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Add group
+      x-summary-source: derived
   /remove_group:
     post:
       tags:
@@ -229,6 +245,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/AccountOpResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Remove group
+      x-summary-source: derived
   /add_action:
     post:
       tags:
@@ -256,6 +274,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/AccountOpResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Add action
+      x-summary-source: derived
   /delete_action:
     post:
       tags:
@@ -283,6 +303,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/AccountOpResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Delete action
+      x-summary-source: derived
   /add_action_to_group:
     post:
       tags:
@@ -310,6 +332,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/AccountOpResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Add action to group
+      x-summary-source: derived
   /add_pkp_to_group:
     post:
       tags:
@@ -337,6 +361,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/AccountOpResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Add pkp to group
+      x-summary-source: derived
   /remove_pkp_from_group:
     post:
       tags:
@@ -364,6 +390,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/AccountOpResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Remove pkp from group
+      x-summary-source: derived
   /add_usage_api_key:
     post:
       tags:
@@ -391,6 +419,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/AddUsageApiKeyResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Add usage api key
+      x-summary-source: derived
   /add_usage_api_key_with_signature:
     post:
       tags:
@@ -411,6 +441,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/AddUsageApiKeyWithSignatureResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Add usage api key with signature
+      x-summary-source: derived
   /update_usage_api_key:
     post:
       tags:
@@ -438,6 +470,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/AccountOpResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Update usage api key
+      x-summary-source: derived
   /remove_usage_api_key:
     post:
       tags:
@@ -465,6 +499,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/AccountOpResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Remove usage api key
+      x-summary-source: derived
   /update_group:
     post:
       tags:
@@ -492,6 +528,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/AccountOpResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Update group
+      x-summary-source: derived
   /remove_action_from_group:
     post:
       tags:
@@ -519,6 +557,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/AccountOpResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Remove action from group
+      x-summary-source: derived
   /update_action_metadata:
     post:
       tags:
@@ -546,6 +586,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/AccountOpResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Update action metadata
+      x-summary-source: derived
   /update_usage_api_key_metadata:
     post:
       tags:
@@ -573,6 +615,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/AccountOpResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Update usage api key metadata
+      x-summary-source: derived
   /list_groups:
     get:
       tags:
@@ -610,6 +654,8 @@ paths:
                   items:
                     $ref: '#/components/schemas/ListMetadataItem'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: List groups
+      x-summary-source: derived
   /list_wallets:
     get:
       tags:
@@ -647,6 +693,8 @@ paths:
                   items:
                     $ref: '#/components/schemas/WalletItem'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: List wallets
+      x-summary-source: derived
   /list_wallets_in_group:
     get:
       tags:
@@ -691,6 +739,8 @@ paths:
                   items:
                     $ref: '#/components/schemas/WalletItem'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: List wallets in group
+      x-summary-source: derived
   /list_actions:
     get:
       tags:
@@ -700,8 +750,9 @@ paths:
       - name: group_id
         in: query
         schema:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
       - name: page_number
         in: query
         required: true
@@ -733,6 +784,8 @@ paths:
                   items:
                     $ref: '#/components/schemas/ListMetadataItem'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: List actions
+      x-summary-source: derived
   /get_node_chain_config:
     get:
       tags:
@@ -747,6 +800,8 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/NodeChainConfigResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Get node chain config
+      x-summary-source: derived
   /get_chain_config_keys:
     get:
       tags:
@@ -761,8 +816,91 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/ChainConfigKeysResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+      summary: Get chain config keys
+      x-summary-source: derived
 components:
   schemas:
+    UpdateUsageApiKeyRequest:
+      description: Request for update_usage_api_key. Updates all permissions and metadata on an existing usage API key. API key via header.
+      type: object
+      required:
+      - add_pkp_to_groups
+      - can_create_groups
+      - can_create_pkps
+      - can_delete_groups
+      - description
+      - execute_in_groups
+      - manage_ipfs_ids_in_groups
+      - name
+      - remove_pkp_from_groups
+      - usage_api_key
+      properties:
+        usage_api_key:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        can_create_groups:
+          type: boolean
+        can_delete_groups:
+          type: boolean
+        can_create_pkps:
+          type: boolean
+        manage_ipfs_ids_in_groups:
+          description: Group IDs to grant manage-IPFS-IDs permission. 0 is wildcard for all groups.
+          type: array
+          items:
+            type: integer
+            format: uint64
+            minimum: 0.0
+        add_pkp_to_groups:
+          description: Group IDs to grant add-PKP permission. 0 is wildcard for all groups.
+          type: array
+          items:
+            type: integer
+            format: uint64
+            minimum: 0.0
+        remove_pkp_from_groups:
+          description: Group IDs to grant remove-PKP permission. 0 is wildcard for all groups.
+          type: array
+          items:
+            type: integer
+            format: uint64
+            minimum: 0.0
+        execute_in_groups:
+          description: Group IDs to grant execute permission. 0 is wildcard for all groups.
+          type: array
+          items:
+            type: integer
+            format: uint64
+            minimum: 0.0
+    AddActionRequest:
+      type: object
+      required:
+      - action_ipfs_cid
+      - description
+      - name
+      properties:
+        action_ipfs_cid:
+          description: IPFS CID for the action (keccak256-hashed on server).
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+    CreateWalletWithSignatureResponse:
+      description: Returned by `/create_wallet_with_signature`. The client must follow up with an on-chain `registerWalletDerivation(adminHash, wallet_address, derivation_path, name, description)` call signed by the same wallet — until that lands, the PKP exists in MPC but is not registered to any account.
+      type: object
+      required:
+      - derivation_path
+      - wallet_address
+      properties:
+        wallet_address:
+          type: string
+        derivation_path:
+          description: 0x-prefixed lowercase hex (uint256). Pass through verbatim to `registerWalletDerivation`'s `derivationPath` arg.
+          type: string
     AddUsageApiKeyRequest:
       description: Request for add_usage_api_key. expiration and balance as decimal strings (e.g. unix timestamp, wei). API key via header.
       type: object
@@ -815,6 +953,215 @@ components:
             type: integer
             format: uint64
             minimum: 0.0
+    WalletItem:
+      description: One item from list_groups, list_wallets, list_wallets_in_group, or list_actions (AccountConfig.sol Metadata).
+      type: object
+      required:
+      - description
+      - id
+      - name
+      - wallet_address
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        wallet_address:
+          type: string
+    RemoveUsageApiKeyRequest:
+      description: API key via header.
+      type: object
+      required:
+      - usage_api_key
+      properties:
+        usage_api_key:
+          type: string
+    UpdateActionMetadataRequest:
+      description: Request for update_action_metadata. hashed_cid is already a keccak256 hash (hex string). API key via header.
+      type: object
+      required:
+      - description
+      - hashed_cid
+      - name
+      properties:
+        hashed_cid:
+          description: Already-hashed CID for the action (0x-prefixed hex string).
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+    RemoveGroupRequest:
+      type: object
+      required:
+      - group_id
+      properties:
+        group_id:
+          type: string
+    UpdateGroupRequest:
+      description: Request for update_group (AccountConfig.updateGroup). API key via header.
+      type: object
+      required:
+      - description
+      - group_id
+      - name
+      properties:
+        group_id:
+          description: Group ID (decimal or hex string).
+          type: integer
+          format: uint64
+          minimum: 0.0
+        name:
+          type: string
+        description:
+          type: string
+        pkp_ids_permitted:
+          default: []
+          type: array
+          items:
+            type: string
+        cid_hashes_permitted:
+          default: []
+          type: array
+          items:
+            type: string
+    ChainConfigKeysResponse:
+      description: GET /get_chain_config_keys — names of every supported ConfigKeys variant.
+      type: object
+      required:
+      - keys
+      properties:
+        keys:
+          type: array
+          items:
+            type: string
+    UpdateUsageApiKeyMetadataRequest:
+      description: Request for update_usage_api_key_metadata (AccountConfig.updateUsageApiKeyMetadata). API key via header.
+      type: object
+      required:
+      - description
+      - name
+      - usage_api_key
+      properties:
+        usage_api_key:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+    NodeChainConfigResponse:
+      type: object
+      required:
+      - chain_id
+      - chain_name
+      - contract_address
+      - is_evm
+      - testnet
+      - token
+      properties:
+        chain_name:
+          type: string
+        chain_id:
+          type: integer
+          format: uint64
+          minimum: 0.0
+        is_evm:
+          type: boolean
+        testnet:
+          type: boolean
+        token:
+          type: string
+        contract_address:
+          type: string
+    NewAccountRequest:
+      type: object
+      required:
+      - account_description
+      - account_name
+      properties:
+        account_name:
+          type: string
+        account_description:
+          type: string
+        email:
+          description: Optional email address — forwarded to Stripe for the customer record.  Not stored on-chain.
+          default: null
+          type:
+          - string
+          - 'null'
+    AddActionToGroupRequest:
+      type: object
+      required:
+      - action_ipfs_cid
+      - group_id
+      properties:
+        group_id:
+          type: integer
+          format: uint64
+          minimum: 0.0
+        action_ipfs_cid:
+          description: IPFS CID for the action (will be keccak256-hashed on server).
+          type: string
+    AccountOpResponse:
+      description: Response for account config operations (add_pkp_to_group, remove_pkp_from_group, add_usage_api_key, remove_usage_api_key).
+      type: object
+      required:
+      - success
+      properties:
+        success:
+          type: boolean
+    RemovePkpFromGroupRequest:
+      type: object
+      required:
+      - group_id
+      - pkp_id
+      properties:
+        group_id:
+          type: integer
+          format: uint64
+          minimum: 0.0
+        pkp_id:
+          type: string
+    RemoveActionFromGroupRequest:
+      description: Request for remove_action_from_group. hashed_cid is already a keccak256 hash (hex string). API key via header.
+      type: object
+      required:
+      - group_id
+      - hashed_cid
+      properties:
+        group_id:
+          type: integer
+          format: uint64
+          minimum: 0.0
+        hashed_cid:
+          description: Already-hashed CID for the action (0x-prefixed hex string).
+          type: string
+    AddPkpToGroupRequest:
+      type: object
+      required:
+      - group_id
+      - pkp_id
+      properties:
+        group_id:
+          description: Group ID (decimal or hex string).
+          type: integer
+          format: uint64
+          minimum: 0.0
+        pkp_id:
+          type: string
+    AddGroupResponse:
+      description: Response for add_group, includes the on-chain group ID.
+      type: object
+      required:
+      - group_id
+      - success
+      properties:
+        success:
+          type: boolean
+        group_id:
+          type: string
     ApiKeyItem:
       description: One item from list_api_keys (AccountConfig.sol UsageApiKey).
       type: object
@@ -877,47 +1224,22 @@ components:
             type: integer
             format: uint64
             minimum: 0.0
-    AddUsageApiKeyResponse:
-      description: Response for account config operations (add_group, add_pkp_to_group, remove_pkp_from_group, add_usage_api_key, remove_usage_api_key).
+    ConvertToChainSecuredAccountRequest:
+      description: Body for `convert_to_chain_secured_account`. The caller is authenticated by their existing API key (header). The supplied wallet becomes the on-chain admin and the account flips from managed to ChainSecured. The conversion is irreversible.
       type: object
       required:
-      - success
-      - usage_api_key
+      - new_admin_wallet_address
+      - signature
+      - typed_data
       properties:
-        success:
-          type: boolean
-        usage_api_key:
+        new_admin_wallet_address:
+          description: Hex-encoded EVM address (with or without 0x prefix). Must be the wallet the user controls; verified by an EIP-712 typed-data signature.
           type: string
-    AddGroupResponse:
-      description: Response for add_group, includes the on-chain group ID.
-      type: object
-      required:
-      - group_id
-      - success
-      properties:
-        success:
-          type: boolean
-        group_id:
+        typed_data:
+          description: 'EIP-712 typed-data object the wallet signed. Must use `primaryType: "ConvertAccount"` and the canonical schema (see `core::eip712`).'
+        signature:
+          description: 65-byte 0x-prefixed signature (r||s||v) over the EIP-712 digest of `typed_data`.
           type: string
-    DeleteActionRequest:
-      description: Request for delete_action. hashed_cid is already a keccak256 hash (hex string). API key via header.
-      type: object
-      required:
-      - hashed_cid
-      properties:
-        hashed_cid:
-          description: Already-hashed CID for the action (0x-prefixed hex string).
-          type: string
-    ChainConfigKeysResponse:
-      description: GET /get_chain_config_keys — names of every supported ConfigKeys variant.
-      type: object
-      required:
-      - keys
-      properties:
-        keys:
-          type: array
-          items:
-            type: string
     CreateWalletWithSignatureRequest:
       description: 'ChainSecured wallet creation. The client signs EIP-712 typed data with their wallet; the server verifies the signature, mints a PKP via DStack MPC, and returns the new wallet address + derivation path so the client can register it on-chain via `registerWalletDerivation`.
 
@@ -933,6 +1255,39 @@ components:
         signature:
           description: 65-byte 0x-prefixed signature (r||s||v) over the EIP-712 digest of `typed_data`.
           type: string
+    ListMetadataItem:
+      description: One item from list_groups, list_wallets, list_wallets_in_group, or list_actions (AccountConfig.sol Metadata).
+      type: object
+      required:
+      - description
+      - id
+      - name
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+    DeleteActionRequest:
+      description: Request for delete_action. hashed_cid is already a keccak256 hash (hex string). API key via header.
+      type: object
+      required:
+      - hashed_cid
+      properties:
+        hashed_cid:
+          description: Already-hashed CID for the action (0x-prefixed hex string).
+          type: string
+    NewAccountResponse:
+      type: object
+      required:
+      - api_key
+      - wallet_address
+      properties:
+        api_key:
+          type: string
+        wallet_address:
+          type: string
     AddUsageApiKeyWithSignatureRequest:
       description: 'ChainSecured usage-key minting. Mirrors `CreateWalletWithSignatureRequest`: the user proves wallet ownership with an EIP-712 typed-data signature, the server mints a usage-key wallet via DStack MPC and returns the secret (as the usage API key) plus address + derivation path. The client follows up with on-chain `registerWalletDerivation` and `setUsageApiKey` signed by their admin wallet — only the admin wallet of a ChainSecured account can call `setUsageApiKey` (see AppStorage.accountExistsAndIsMutable).'
       type: object
@@ -945,61 +1300,6 @@ components:
         signature:
           description: 65-byte 0x-prefixed signature (r||s||v) over the EIP-712 digest of `typed_data`.
           type: string
-    UpdateUsageApiKeyRequest:
-      description: Request for update_usage_api_key. Updates all permissions and metadata on an existing usage API key. API key via header.
-      type: object
-      required:
-      - add_pkp_to_groups
-      - can_create_groups
-      - can_create_pkps
-      - can_delete_groups
-      - description
-      - execute_in_groups
-      - manage_ipfs_ids_in_groups
-      - name
-      - remove_pkp_from_groups
-      - usage_api_key
-      properties:
-        usage_api_key:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
-        can_create_groups:
-          type: boolean
-        can_delete_groups:
-          type: boolean
-        can_create_pkps:
-          type: boolean
-        manage_ipfs_ids_in_groups:
-          description: Group IDs to grant manage-IPFS-IDs permission. 0 is wildcard for all groups.
-          type: array
-          items:
-            type: integer
-            format: uint64
-            minimum: 0.0
-        add_pkp_to_groups:
-          description: Group IDs to grant add-PKP permission. 0 is wildcard for all groups.
-          type: array
-          items:
-            type: integer
-            format: uint64
-            minimum: 0.0
-        remove_pkp_from_groups:
-          description: Group IDs to grant remove-PKP permission. 0 is wildcard for all groups.
-          type: array
-          items:
-            type: integer
-            format: uint64
-            minimum: 0.0
-        execute_in_groups:
-          description: Group IDs to grant execute permission. 0 is wildcard for all groups.
-          type: array
-          items:
-            type: integer
-            format: uint64
-            minimum: 0.0
     CreateWalletResponse:
       type: object
       required:
@@ -1007,90 +1307,8 @@ components:
       properties:
         wallet_address:
           type: string
-    NodeChainConfigResponse:
-      type: object
-      required:
-      - chain_id
-      - chain_name
-      - contract_address
-      - is_evm
-      - testnet
-      - token
-      properties:
-        chain_name:
-          type: string
-        chain_id:
-          type: integer
-          format: uint64
-          minimum: 0.0
-        is_evm:
-          type: boolean
-        testnet:
-          type: boolean
-        token:
-          type: string
-        contract_address:
-          type: string
-    NewAccountResponse:
-      type: object
-      required:
-      - api_key
-      - wallet_address
-      properties:
-        api_key:
-          type: string
-        wallet_address:
-          type: string
-    NewAccountRequest:
-      type: object
-      required:
-      - account_description
-      - account_name
-      properties:
-        account_name:
-          type: string
-        account_description:
-          type: string
-        email:
-          description: Optional email address — forwarded to Stripe for the customer record.  Not stored on-chain.
-          default: null
-          type: string
-          nullable: true
-    AccountOpResponse:
-      description: Response for account config operations (add_pkp_to_group, remove_pkp_from_group, add_usage_api_key, remove_usage_api_key).
-      type: object
-      required:
-      - success
-      properties:
-        success:
-          type: boolean
-    AddPkpToGroupRequest:
-      type: object
-      required:
-      - group_id
-      - pkp_id
-      properties:
-        group_id:
-          description: Group ID (decimal or hex string).
-          type: integer
-          format: uint64
-          minimum: 0.0
-        pkp_id:
-          type: string
-    UpdateUsageApiKeyMetadataRequest:
-      description: Request for update_usage_api_key_metadata (AccountConfig.updateUsageApiKeyMetadata). API key via header.
-      type: object
-      required:
-      - description
-      - name
-      - usage_api_key
-      properties:
-        usage_api_key:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
+    ErrMessage:
+      type: string
     AddUsageApiKeyWithSignatureResponse:
       description: Returned by `/add_usage_api_key_with_signature`. The client must follow up with on-chain `registerWalletDerivation(adminHash, wallet_address, derivation_path, name, description)` and `setUsageApiKey(adminHash, keccak256(usage_api_key), …)` — both signed by the admin wallet — to attach the usage key to the ChainSecured account.
       type: object
@@ -1107,107 +1325,6 @@ components:
           type: string
         derivation_path:
           description: 0x-prefixed lowercase hex (uint256). Pass through verbatim to `registerWalletDerivation`'s `derivationPath` arg.
-          type: string
-    ErrMessage:
-      type: string
-    WalletItem:
-      description: One item from list_groups, list_wallets, list_wallets_in_group, or list_actions (AccountConfig.sol Metadata).
-      type: object
-      required:
-      - description
-      - id
-      - name
-      - wallet_address
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
-        wallet_address:
-          type: string
-    UpdateActionMetadataRequest:
-      description: Request for update_action_metadata. hashed_cid is already a keccak256 hash (hex string). API key via header.
-      type: object
-      required:
-      - description
-      - hashed_cid
-      - name
-      properties:
-        hashed_cid:
-          description: Already-hashed CID for the action (0x-prefixed hex string).
-          type: string
-        name:
-          type: string
-        description:
-          type: string
-    RemoveActionFromGroupRequest:
-      description: Request for remove_action_from_group. hashed_cid is already a keccak256 hash (hex string). API key via header.
-      type: object
-      required:
-      - group_id
-      - hashed_cid
-      properties:
-        group_id:
-          type: integer
-          format: uint64
-          minimum: 0.0
-        hashed_cid:
-          description: Already-hashed CID for the action (0x-prefixed hex string).
-          type: string
-    CreateWalletWithSignatureResponse:
-      description: Returned by `/create_wallet_with_signature`. The client must follow up with an on-chain `registerWalletDerivation(adminHash, wallet_address, derivation_path, name, description)` call signed by the same wallet — until that lands, the PKP exists in MPC but is not registered to any account.
-      type: object
-      required:
-      - derivation_path
-      - wallet_address
-      properties:
-        wallet_address:
-          type: string
-        derivation_path:
-          description: 0x-prefixed lowercase hex (uint256). Pass through verbatim to `registerWalletDerivation`'s `derivationPath` arg.
-          type: string
-    UpdateGroupRequest:
-      description: Request for update_group (AccountConfig.updateGroup). API key via header.
-      type: object
-      required:
-      - description
-      - group_id
-      - name
-      properties:
-        group_id:
-          description: Group ID (decimal or hex string).
-          type: integer
-          format: uint64
-          minimum: 0.0
-        name:
-          type: string
-        description:
-          type: string
-        pkp_ids_permitted:
-          default: []
-          type: array
-          items:
-            type: string
-        cid_hashes_permitted:
-          default: []
-          type: array
-          items:
-            type: string
-    ListMetadataItem:
-      description: One item from list_groups, list_wallets, list_wallets_in_group, or list_actions (AccountConfig.sol Metadata).
-      type: object
-      required:
-      - description
-      - id
-      - name
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        description:
           type: string
     AddGroupRequest:
       description: Request for add_group. permitted_actions and pkps are keccak256 hashes as hex strings (with or without 0x). API key via header.
@@ -1234,73 +1351,14 @@ components:
           type: array
           items:
             type: string
-    AddActionRequest:
+    AddUsageApiKeyResponse:
+      description: Response for account config operations (add_group, add_pkp_to_group, remove_pkp_from_group, add_usage_api_key, remove_usage_api_key).
       type: object
       required:
-      - action_ipfs_cid
-      - description
-      - name
-      properties:
-        action_ipfs_cid:
-          description: IPFS CID for the action (keccak256-hashed on server).
-          type: string
-        name:
-          type: string
-        description:
-          type: string
-    RemoveUsageApiKeyRequest:
-      description: API key via header.
-      type: object
-      required:
+      - success
       - usage_api_key
       properties:
+        success:
+          type: boolean
         usage_api_key:
-          type: string
-    AddActionToGroupRequest:
-      type: object
-      required:
-      - action_ipfs_cid
-      - group_id
-      properties:
-        group_id:
-          type: integer
-          format: uint64
-          minimum: 0.0
-        action_ipfs_cid:
-          description: IPFS CID for the action (will be keccak256-hashed on server).
-          type: string
-    RemovePkpFromGroupRequest:
-      type: object
-      required:
-      - group_id
-      - pkp_id
-      properties:
-        group_id:
-          type: integer
-          format: uint64
-          minimum: 0.0
-        pkp_id:
-          type: string
-    RemoveGroupRequest:
-      type: object
-      required:
-      - group_id
-      properties:
-        group_id:
-          type: string
-    ConvertToChainSecuredAccountRequest:
-      description: Body for `convert_to_chain_secured_account`. The caller is authenticated by their existing API key (header). The supplied wallet becomes the on-chain admin and the account flips from managed to ChainSecured. The conversion is irreversible.
-      type: object
-      required:
-      - new_admin_wallet_address
-      - signature
-      - typed_data
-      properties:
-        new_admin_wallet_address:
-          description: Hex-encoded EVM address (with or without 0x prefix). Must be the wallet the user controls; verified by an EIP-712 typed-data signature.
-          type: string
-        typed_data:
-          description: 'EIP-712 typed-data object the wallet signed. Must use `primaryType: "ConvertAccount"` and the canonical schema (see `core::eip712`).'
-        signature:
-          description: 65-byte 0x-prefixed signature (r||s||v) over the EIP-712 digest of `typed_data`.
           type: string
