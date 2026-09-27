@@ -77,31 +77,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    ErrMessage:
-      type: string
-    VersionResponse:
-      type: object
-      required:
-      - commit_version
-      - name
-      - submodule_versions
-      - version
-      properties:
-        name:
-          type: string
-        version:
-          type: string
-        commit_version:
-          type: string
-        submodule_versions:
-          type: array
-          items:
-            type: array
-            items:
-            - type: string
-            - type: string
-            maxItems: 2
-            minItems: 2
     LitActionClientConfigResponse:
       description: GET /get_lit_action_client_config — effective ClientBuilder configuration values, including any chain-config overrides applied at startup.
       type: object
@@ -157,3 +132,28 @@ components:
           type: integer
           format: uint64
           minimum: 0.0
+    ErrMessage:
+      type: string
+    VersionResponse:
+      type: object
+      required:
+      - commit_version
+      - name
+      - submodule_versions
+      - version
+      properties:
+        name:
+          type: string
+        version:
+          type: string
+        commit_version:
+          type: string
+        submodule_versions:
+          type: array
+          items:
+            type: array
+            items:
+            - type: string
+            - type: string
+            maxItems: 2
+            minItems: 2

@@ -42,6 +42,18 @@ components:
   schemas:
     ErrMessage:
       type: string
+    LitActionResponse:
+      type: object
+      required:
+      - has_error
+      - logs
+      - response
+      properties:
+        response: {}
+        logs:
+          type: string
+        has_error:
+          type: boolean
     LitActionRequest:
       description: 'API key via header.
 
@@ -62,15 +74,3 @@ components:
           - string
           - 'null'
         js_params: {}
-    LitActionResponse:
-      type: object
-      required:
-      - has_error
-      - logs
-      - response
-      properties:
-        response: {}
-        logs:
-          type: string
-        has_error:
-          type: boolean
