@@ -1,0 +1,28 @@
+slug: lit-protocol
+provider: Lit Protocol
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Billing
+  spec_file: lit-protocol-billing-api-openapi.yml
+  capability_id: BC-4250.40
+  capability_id_l1: BC-4250
+  capability_name: Payment Collection & Dunning
+  confidence: 0.7
+  evidence: POST /billing/create_payment_intent  Billing create payment intent; POST /billing/confirm_payment;
+    GET /billing/balance; StripeConfigResponse
+  reason: 'Operations collect payment via Stripe payment intents and expose an account billing balance
+    for a usage-based API service, which is payment-method handling and payment authorisation/collection
+    for the SaaS commercial model. Mapped to Payment Collection rather than invoicing or metering since
+    no invoice, rating or dunning operations appear. Moderate confidence: the surface is thin (4 operations)
+    and could be read as the broader billing L1.'

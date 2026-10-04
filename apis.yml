@@ -107,6 +107,9 @@ apis:
   - type: Documentation
     url: https://developer.litprotocol.com/
 common:
+  - type: CapabilityMap
+    url: capabilities/lit-protocol-capability-edges.yml
+    name: Lit Protocol Business Capability Map
   - type: AgenticAccess
     url: agentic-access/lit-protocol-agentic-access.yml
   - type: DomainSecurity
