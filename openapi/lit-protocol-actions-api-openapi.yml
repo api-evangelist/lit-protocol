@@ -52,8 +52,6 @@ components:
           type: string
         has_error:
           type: boolean
-    ErrMessage:
-      type: string
     LitActionRequest:
       description: 'API key via header.
 
@@ -74,3 +72,5 @@ components:
           - string
           - 'null'
         js_params: {}
+    ErrMessage:
+      type: string

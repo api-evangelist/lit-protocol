@@ -100,8 +100,6 @@ components:
             - type: string
             maxItems: 2
             minItems: 2
-    ErrMessage:
-      type: string
     LitActionClientConfigResponse:
       description: GET /get_lit_action_client_config — effective ClientBuilder configuration values, including any chain-config overrides applied at startup.
       type: object
@@ -157,3 +155,5 @@ components:
           type: integer
           format: uint64
           minimum: 0.0
+    ErrMessage:
+      type: string
