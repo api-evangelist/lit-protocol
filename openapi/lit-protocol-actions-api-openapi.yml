@@ -40,6 +40,8 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    ErrMessage:
+      type: string
     LitActionResponse:
       type: object
       required:
@@ -72,5 +74,3 @@ components:
           - string
           - 'null'
         js_params: {}
-    ErrMessage:
-      type: string
