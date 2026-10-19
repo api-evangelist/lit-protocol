@@ -30,9 +30,18 @@ paths:
     get:
       tags:
       - Billing
-      description: GET /billing/balance — returns the current credit balance for the authenticated user.
+      description: 'GET /billing/balance — returns the current credit balance for the authenticated user.
+
+
+        `force=true` drops the cached balance before reading so a credit added directly in Stripe surfaces immediately, without waiting out the 10-minute cache TTL or having to run a Lit Action. A plain re-read is not enough: the stale-while-revalidate background refresh deliberately ignores credit *increases* (it only adopts a balance that went up, to preserve optimistic charge decrements), so the cache must be invalidated to pick up a top-up.'
       operationId: billing_balance
       parameters:
+      - name: force
+        in: query
+        schema:
+          type:
+          - boolean
+          - 'null'
       - name: X-Api-Key
         in: header
         description: 'API-mode auth: account or usage API key (alternatively `Authorization: Bearer <key>`). OR — for ChainSecured callers — omit X-Api-Key entirely and send `X-Wallet-Auth: <base64(JSON{typed_data, signature})>` where `typed_data` is EIP-712 with `primaryType: "BillingAuth"`. The signature proves wallet possession; the typed data must include the connected wallet address and an issuedAt timestamp within ±5 minutes.'
@@ -58,7 +67,7 @@ paths:
       parameters:
       - name: X-Api-Key
         in: header
-        description: 'API-mode auth: account or usage API key (alternatively `Authorization: Bearer <key>`). OR — for ChainSecured callers — omit X-Api-Key entirely and send `X-Wallet-Auth: <base64(JSON{typed_data, signature})>` where `typed_data` is EIP-712 with `primaryType: "BillingAuth"`. The signature proves wallet possession; the typed data must include the connected wallet address and an issuedAt timestamp within ±5 minutes.'
+        description: 'Billing owner only: account master API key or verified X-Wallet-Auth. Execution usage keys cannot manage funding or saved-card settings.'
         schema:
           type: string
       requestBody:
@@ -87,7 +96,7 @@ paths:
       parameters:
       - name: X-Api-Key
         in: header
-        description: 'API-mode auth: account or usage API key (alternatively `Authorization: Bearer <key>`). OR — for ChainSecured callers — omit X-Api-Key entirely and send `X-Wallet-Auth: <base64(JSON{typed_data, signature})>` where `typed_data` is EIP-712 with `primaryType: "BillingAuth"`. The signature proves wallet possession; the typed data must include the connected wallet address and an issuedAt timestamp within ±5 minutes.'
+        description: 'Billing owner only: account master API key or verified X-Wallet-Auth. Execution usage keys cannot manage funding or saved-card settings.'
         schema:
           type: string
       requestBody:
@@ -109,6 +118,27 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    ConfirmPaymentRequest:
+      description: POST /billing/confirm_payment
+      type: object
+      required:
+      - payment_intent_id
+      properties:
+        payment_intent_id:
+          type: string
+    CreatePaymentIntentResponse:
+      description: POST /billing/create_payment_intent — client secret for Stripe.js confirmCardPayment.
+      type: object
+      required:
+      - client_secret
+      - payment_intent_id
+      properties:
+        client_secret:
+          type: string
+        payment_intent_id:
+          type: string
+    ErrMessage:
+      type: string
     AccountOpResponse:
       description: Response for account config operations (add_pkp_to_group, remove_pkp_from_group, add_usage_api_key, remove_usage_api_key).
       type: object
@@ -117,14 +147,6 @@ components:
       properties:
         success:
           type: boolean
-    StripeConfigResponse:
-      description: GET /billing/stripe_config — returns the Stripe publishable key for Stripe.js.
-      type: object
-      required:
-      - publishable_key
-      properties:
-        publishable_key:
-          type: string
     BillingBalanceResponse:
       description: GET /billing/balance — current credit balance for the authenticated API key.
       type: object
@@ -139,14 +161,6 @@ components:
         balance_display:
           description: Human-readable, e.g. "$5.00 credit".
           type: string
-    ConfirmPaymentRequest:
-      description: POST /billing/confirm_payment
-      type: object
-      required:
-      - payment_intent_id
-      properties:
-        payment_intent_id:
-          type: string
     CreatePaymentIntentRequest:
       description: POST /billing/create_payment_intent
       type: object
@@ -157,16 +171,11 @@ components:
           description: Amount to charge in US cents (minimum 500 = $5.00).
           type: integer
           format: int64
-    CreatePaymentIntentResponse:
-      description: POST /billing/create_payment_intent — client secret for Stripe.js confirmCardPayment.
+    StripeConfigResponse:
+      description: GET /billing/stripe_config — returns the Stripe publishable key for Stripe.js.
       type: object
       required:
-      - client_secret
-      - payment_intent_id
+      - publishable_key
       properties:
-        client_secret:
+        publishable_key:
           type: string
-        payment_intent_id:
-          type: string
-    ErrMessage:
-      type: string

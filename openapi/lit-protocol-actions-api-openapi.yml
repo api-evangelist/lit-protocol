@@ -36,24 +36,12 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/LitActionResponse'
                 - $ref: '#/components/schemas/ErrMessage'
+        '429':
+          description: Too Many Requests — the node is CPU-overloaded and shedding load. Clients receiving this response should retry the request up to five times with exponential backoff.
       summary: Lit action
       x-summary-source: derived
 components:
   schemas:
-    ErrMessage:
-      type: string
-    LitActionResponse:
-      type: object
-      required:
-      - has_error
-      - logs
-      - response
-      properties:
-        response: {}
-        logs:
-          type: string
-        has_error:
-          type: boolean
     LitActionRequest:
       description: 'API key via header.
 
@@ -74,3 +62,17 @@ components:
           - string
           - 'null'
         js_params: {}
+    LitActionResponse:
+      type: object
+      required:
+      - has_error
+      - logs
+      - response
+      properties:
+        response: {}
+        logs:
+          type: string
+        has_error:
+          type: boolean
+    ErrMessage:
+      type: string
