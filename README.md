@@ -1,4 +1,4 @@
-# Lit Protocol (lit-protocol)
+# Lit Protocol
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,72 +66,164 @@
 
 Lit Protocol is a decentralized key management network providing Programmable Key Pairs (PKPs), Lit Actions (off-chain JS execution), threshold encryption, and access-control conditions. The Chipotle Express API exposes account, PKP, and Lit Action management as REST endpoints alongside the JavaScript SDK.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/lit-protocol/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/lit-protocol/refs/heads/main/apis.yml)
+**Areas:** Web3 · Key Management · MPC · Programmable Keys · Lit Actions
 
-## Tags
+## Lit Protocol on APIs.io
 
-- Web3
-- Key Management
-- MPC
-- Programmable Keys
-- Lit Actions
+Everything profiled for Lit Protocol is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/lit-protocol/](https://apis.io/providers/lit-protocol/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (5)
 
-- **Created:** 2026-05-08
-- **Modified:** 2026-05-08
+- [Lit Network Node JSON-RPC (SDK-mediated)](https://apis.io/apis/lit-protocol/network-rpc/) — Threshold-cryptography network of Lit nodes accessed via the Lit JS SDK for signing, encryption, decryption, and Lit Action execution. Direct REST access is…
+- [Lit Protocol Account Management API](https://apis.io/apis/lit-protocol/lit-protocol-account-management-api/) — The Account Management API from Lit Protocol — 28 operation(s) for account management.
+- [Lit Protocol Actions API](https://apis.io/apis/lit-protocol/lit-protocol-actions-api/) — The Actions API from Lit Protocol — 1 operation(s) for actions.
+- [Lit Protocol Billing API](https://apis.io/apis/lit-protocol/lit-protocol-billing-api/) — The Billing API from Lit Protocol — 4 operation(s) for billing.
+- [Lit Protocol Configuration API](https://apis.io/apis/lit-protocol/lit-protocol-configuration-api/) — The Configuration API from Lit Protocol — 4 operation(s) for configuration.
 
-## APIs
+### Published properties
 
-### Lit Protocol Chipotle Express API (Core v1)
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-REST API for account management, API keys, PKP minting, IPFS-anchored Lit Actions, encryption/decryption helpers, and credit balance / usage queries.
+#### Agentic access (1)
 
-- **Human URL:** [https://developer.litprotocol.com/](https://developer.litprotocol.com/)
-- **Base URL:** `https://api.chipotle.litprotocol.com/core/v1`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Lit Protocol Agentic Access](https://apis.io/agentic-access/lit-protocol/lit-protocol-agentic-access/)
 
-- REST
-- PKP
-- Lit Actions
+#### JSON Schema (40)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://developer.litprotocol.com/)
-- [OpenAPI](openapi/lit-protocol-core-v1-openapi.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/lit-protocol-core-v1.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/lit-protocol-core-v1.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [AccountOpResponse](https://apis.io/schemas/lit-protocol/lit-protocol-accountopresponse/)
+- [AddActionRequest](https://apis.io/schemas/lit-protocol/lit-protocol-addactionrequest/)
+- [AddActionToGroupRequest](https://apis.io/schemas/lit-protocol/lit-protocol-addactiontogrouprequest/)
+- [AddGroupRequest](https://apis.io/schemas/lit-protocol/lit-protocol-addgrouprequest/)
+- [AddGroupResponse](https://apis.io/schemas/lit-protocol/lit-protocol-addgroupresponse/)
+- [AddPkpToGroupRequest](https://apis.io/schemas/lit-protocol/lit-protocol-addpkptogrouprequest/)
+- [AddUsageApiKeyRequest](https://apis.io/schemas/lit-protocol/lit-protocol-addusageapikeyrequest/)
+- [AddUsageApiKeyResponse](https://apis.io/schemas/lit-protocol/lit-protocol-addusageapikeyresponse/)
+- [AddUsageApiKeyWithSignatureRequest](https://apis.io/schemas/lit-protocol/lit-protocol-addusageapikeywithsignaturerequest/)
+- [AddUsageApiKeyWithSignatureResponse](https://apis.io/schemas/lit-protocol/lit-protocol-addusageapikeywithsignatureresponse/)
+- [ApiKeyItem](https://apis.io/schemas/lit-protocol/lit-protocol-apikeyitem/)
+- [BillingBalanceResponse](https://apis.io/schemas/lit-protocol/lit-protocol-billingbalanceresponse/)
+- [ChainConfigKeysResponse](https://apis.io/schemas/lit-protocol/lit-protocol-chainconfigkeysresponse/)
+- [ConfirmPaymentRequest](https://apis.io/schemas/lit-protocol/lit-protocol-confirmpaymentrequest/)
+- [ConvertToChainSecuredAccountRequest](https://apis.io/schemas/lit-protocol/lit-protocol-converttochainsecuredaccountrequest/)
+- [CreatePaymentIntentRequest](https://apis.io/schemas/lit-protocol/lit-protocol-createpaymentintentrequest/)
+- [CreatePaymentIntentResponse](https://apis.io/schemas/lit-protocol/lit-protocol-createpaymentintentresponse/)
+- [CreateWalletResponse](https://apis.io/schemas/lit-protocol/lit-protocol-createwalletresponse/)
+- [CreateWalletWithSignatureRequest](https://apis.io/schemas/lit-protocol/lit-protocol-createwalletwithsignaturerequest/)
+- [CreateWalletWithSignatureResponse](https://apis.io/schemas/lit-protocol/lit-protocol-createwalletwithsignatureresponse/)
+- [DeleteActionRequest](https://apis.io/schemas/lit-protocol/lit-protocol-deleteactionrequest/)
+- [ErrMessage](https://apis.io/schemas/lit-protocol/lit-protocol-errmessage/)
+- [ListMetadataItem](https://apis.io/schemas/lit-protocol/lit-protocol-listmetadataitem/)
+- [LitActionClientConfigResponse](https://apis.io/schemas/lit-protocol/lit-protocol-litactionclientconfigresponse/)
+- [LitActionRequest](https://apis.io/schemas/lit-protocol/lit-protocol-litactionrequest/)
+- …and 15 more published on APIs.io
 
-### Lit Network Node JSON-RPC (SDK-mediated)
+#### JSON Structure (1)
 
-Threshold-cryptography network of Lit nodes accessed via the Lit JS SDK for signing, encryption, decryption, and Lit Action execution. Direct REST access is via the Chipotle API; raw node JSON-RPC is documented for SDK contributors.
+Data models expressed in JSON Structure.
 
-- **Human URL:** [https://developer.litprotocol.com/v3/sdk/installation](https://developer.litprotocol.com/v3/sdk/installation)
-- **Base URL:** `https://serrano.litgateway.com/web/litaction (SDK-mediated)`
+- [Lit Protocol Structure](https://apis.io/json-structure/lit-protocol/lit-protocol-structure/)
 
-#### Tags
+#### Collections (5)
 
-- JSON-RPC
-- Network
+Postman and Open Collection request collections.
 
-#### Properties
+- [lit-api-server Account Management API](https://apis.io/collections/lit-protocol/open-lit-protocol-account-management-api/)
+- [lit-api-server Account Management Actions API](https://apis.io/collections/lit-protocol/open-lit-protocol-actions-api/)
+- [lit-api-server Account Management Billing API](https://apis.io/collections/lit-protocol/open-lit-protocol-billing-api/)
+- [lit-api-server Account Management Configuration API](https://apis.io/collections/lit-protocol/open-lit-protocol-configuration-api/)
+- [lit-api-server](https://apis.io/collections/lit-protocol/open-lit-protocol-core-v1/)
 
-- [Documentation](https://developer.litprotocol.com/v3/sdk/installation)
-- [Postman Collection](collections/lit-protocol-core-v1.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/lit-protocol-core-v1.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Governance rules (1)
 
-## Common Properties
+Spectral rulesets for the provider's contracts.
 
-- [GitHub Organization](https://github.com/LIT-Protocol)
-- [LinkedIn](https://www.linkedin.com/company/lit-protocol)
+- [Lit Protocol — jsonschema rules](https://apis.io/rules/lit-protocol/lit-protocol-jsonschema-spectral-rules/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Lit Protocol Domain Security](https://apis.io/security/lit-protocol/lit-protocol-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Lit Protocol Plans Pricing](https://apis.io/plans/lit-protocol/lit-protocol-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Lit Protocol Rate Limits](https://apis.io/rate-limits/lit-protocol/lit-protocol-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Lit Protocol Finops](https://apis.io/finops/lit-protocol/lit-protocol-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.litprotocol.com/)
-- [Plans](plans/lit-protocol-plans-pricing.yml)
-- [Rate Limits](rate-limits/lit-protocol-rate-limits.yml)
-- [Fin Ops](finops/lit-protocol-finops.yml)
-- [L L Ms Txt](https://developer.litprotocol.com/llms.txt)
+- [Blog](https://spark.litprotocol.com/rss/)
+- [GitHub](https://github.com/LIT-Protocol)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 19.2** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 33.1 |
+| Contract governance | 9.8 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 5.3 |
+
+**Agent readiness 15.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/lit-protocol/](https://apis.io/providers/lit-protocol/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Lit Protocol: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/lit-protocol/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
